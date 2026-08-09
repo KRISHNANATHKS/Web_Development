@@ -1,0 +1,492 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+
+.backgrounds{
+    background-image: url("./images/ChatGPT\ Image\ Aug\ 3\,\ 2026\,\ 01_51_08\ AM.png");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+.gcard{
+    background: rgba(20,20,20,.72);
+    border:1px solid rgba(255,255,255,.08);
+    color: rgb(215, 100, 100);
+    width:500px;
+    max-height:250px;
+    padding:30px;
+    border-radius:30px;
+
+}
+.herotext{
+    position:relative;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    color:white;
+}
+
+.herotext h1,
+.herotext p{
+    opacity:0;
+    transform:translateY(60px);
+    animation:slideUp 2s ease forwards;
+}
+
+.title1{
+    animation-delay:.2s;
+}
+
+.subtitle:nth-of-type(1){
+    animation-delay:1.3s;
+}
+
+.subtitle:nth-of-type(2){
+    animation-delay:1.7s;
+}
+
+.subtitle:nth-of-type(3){
+    animation-delay:2.1s;
+}
+
+@keyframes slideUp{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+/* card */
+/* From Uiverse.io by JAE2Dev */ 
+
+.card {
+  --background: linear-gradient(to right, #13b37f 0%, #11a3c8 100%);
+  width: 800px;
+  height: 500px;
+  padding: 0.9px;
+  border-radius: 0.7rem;
+  overflow: visible;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: -22px;
+  left: 0px;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.76);
+  filter: blur(34.5px);
+  background: #f7ba2b;
+  background: var(--background);
+  transition: opacity 0.5s;
+}
+
+.card-info {
+  --color: #1f1a1d;
+  background: var(--color);
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+}
+
+.card .title {
+  font-weight: light;
+
+}
+
+/*Hover*/
+.card:hover::after {
+  opacity: 0.6;
+  padding: 0.7rem 0;
+  top: 18px;
+  transition: 0.6s;
+}
+
+.card:hover .card-info {
+  color: #fff9f9;
+  transition: color 1s;
+}
+
+.comp{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+/* From Uiverse.io by suleymanlaarabidev */ 
+.cards {
+  width: 400px;
+  height:424px;
+  background: rgb(181, 159, 132);
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  
+  
+}
+
+.cards:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  background: rgb(183, 192, 211);
+  
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.cards:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  transition: all 0.4s;
+   overflow:hidden;    
+    padding:15px;
+  font-size: 13px;
+  transform: rotate(90deg) scale(-1);
+}
+
+.cards:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  transform: rotate(0deg);
+  overflow: hidden;
+}
+img{
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 3px 4px 5px white;
+}
+
+
+
+/* newww */
+.player-section{
+    position: relative;
+    width: 1000px;
+    height: 900px;
+    margin-left: 200px;
+    margin-top: 80px;
+    padding: 100px;
+    
+}
+
+
+.player{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-30%,-50%);
+    width: 320px;
+}
+
+.cards{
+    position: absolute;
+    width: 250px;
+    height: 300px;
+}
+
+
+.card1{
+    top:50px;
+    left:50px;
+    transform:rotate(15deg);
+}
+
+.card2{
+    top:50px;
+    right:-60px;
+    transform:rotate(-15deg);
+}
+
+.card3{
+    bottom:100px;
+    left:80px;
+    transform:rotate(8deg);
+}
+
+.card4{
+    bottom:90px;
+    right:-40px;
+    transform:rotate(-15deg);
+}
+
+.card5{
+    bottom:-80px;
+    left:45%;
+    transform:rotate(3deg);
+}
+
+
+/* Achivements */
+
+/* From Uiverse.io by codebykay101 */ 
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px;
+}
+
+.container .glass {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(#fff2, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  backdrop-filter: blur(10px);
+  /* transform: rotate(calc(var(--r) * 1deg)); */
+}
+
+.container:hover .glass {
+  /* transform: rotate(5deg); */
+  margin: 0 10px;
+}
+
+.container .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.glass img{
+  border: 3px solid rgb(8, 8, 9);
+  box-shadow: 3px 4px 5px bisque;
+  background-color: #f4fafc;
+}
+
+
+
+
+/* Buttton */
+/* From Uiverse.io by mrhyddenn */ 
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+/* Carousel */
+.my-carousel {
+    width: 600px;
+    height: 500px;
+    margin: 50px;
+
+}
+
+.my-carousel .carousel-inner {
+    height: 500px;
+}
+
+.my-carousel .carousel-item {
+    height: 500px;
+}
+
+.my-carousel .carousel-item img {
+    width:100%;
+    height: 500px;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+}
+.legacy{
+  width: 700px;
+  height: 500px;
+  padding: 70px;
+  margin-right: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+.outer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}

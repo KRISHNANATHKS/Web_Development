@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Preline -->
+     <script src="./node_modules/preline/dist/preline.js"></script>
+     <!-- flowbite -->
+      <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+      
+    <!-- FontAwsome -->
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+        <!-- Header -->
+    <!-- Hamburgermenu -->
+
+            <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-default">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://imgs.search.brave.com/RYjXlXcyIzBJ-BaFjtpljDp5iRhK_NN9RVOP8gISj5M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LXJlYWwtZXN0YXRl/LWljb24tc3ZnLWRv/d25sb2FkLXBuZy05/ODIyMTYxLnBuZz9m/PXdlYnAmdz0xMjg" class="h-7" alt="Flowbite Logo" />
+                    <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Z-RealEstate</span>
+                </a>
+                <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base hover:bg-neutral-tertiary hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-hamburger" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+                </button>
+                <div class="hidden w-full" id="navbar-hamburger">
+                <ul class="flex flex-col font-medium mt-4 pt-4 bg-neutral-secondary-soft space-y-2 border-t border-default">
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Pricing</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+            <!-- background -->
+            
+            <section class="h-96 bg-blue-500 mt-18 ">
+                <div class="bg-[url(https://imgs.search.brave.com/hM8JBves2mtepvH1FWLZqWKzTeOmn0Tq2CdpyzSUZao/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE5/ODMyMDU0Ni9waG90/by9yZWFsLWVzdGF0/ZS1icm9rZXItYWdl/bnRzLXNpZ25hdHVy/ZS1vbi10aGUtY29u/dHJhY3QtZmluYWxp/emVkLXRoZS1tb3J0/Z2FnZS1hZ3JlZW1l/bnQtbWFya2luZy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/cXM3TVp0MHRHZTdU/MlduenNtcWRDOUVm/M1JIOVhhZlg2bWdO/VFVLZGR3TT0)] bg-center bg-cover bg-fixed h-96 p-18"> 
+        
+                        
+
+                    <div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs mb-50">
+                        <h5 class="mb-3 text-3xl font-semibold tracking-tight text-heading leading-8 text-black [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)]">Find a Perfect Home</h5>
+                        <h5 class="mb-3 text-3xl font-semibold tracking-tight text-heading leading-8 text-blue [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)]">For Your Family</h5>
+                        <p class="text-body mb-6">Discover premium homes, residential plots, and commercial spaces in the right locations. </p>
+                     <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                            Explore Properties 
+                        </span>
+                    </button>
+                      <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                            Watch Video
+                        </span>
+                    </button>
+                    </div>
+
+
+                </div>
+                
+            </section>
+
+            <!-- location search -->
+             <section>
+
+                <div class="mt-18 mx-18 p-4 bg-gray-100  rounded-xl">
+                    <div class="grid grid-cols-5 gap-8 justify-items-center">
+                            <div class="">
+                                <h4 class="m-1">Enter Location</h4>
+                                <input class="rounded-lg" type="text" placeholder="enter location">
+                            </div>
+                            <div>
+                                <h4 class="m-1">Property Type</h4>
+                                <select class="rounded-lg  border-none" name="" id="">
+                                    <option value="" selected>All Type</option>
+                                    <option value="">House</option>
+                                    <option value="">Plot</option>
+                                </select>
+                            </div>
+                             <div>
+                                <h4 class="m-1">Price Range</h4>
+                                <select class="rounded-lg  border-none" name="" id="">
+                                    <option value="" selected>$5000-$10000</option>
+                                    <option value="">$1000-$20000</option>
+                                    <option value="">$20000-$30000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h4 class="m-1">Rooms</h4>
+                                <select class="rounded-lg  border-none" name="" id="" >
+                                    <option value="" selected>Any</option>
+                                    <option value="">Single</option>
+                                    <option value="">Multi</option>
+                                </select>
+                            </div>
+                            <div>
+                                 <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200 m-3">
+                                
+                                <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                    <i class="fa-solid fa-magnifying-glass m-2"></i>
+                                    Search Properties
+                              </span>
+                    </button>
+                            </div>
+                    </div>
+                </div>
+
+             </section>
+
+            <!-- Body Components -->
+
+
+            <section>
+                <div class="p-18">
+                    <h5 class="m-5 text-4xl font-semibold tracking-tight text-heading leading-8 text-black text-bold">Featured Properties</h5>
+                    <p class="m-5">Explore Our Hand-Picked Properties Just for You.</p>
+                    <div class=" grid grid-cols-4 gap-6">
+                        <div>
+
+                            <div class="bg-neutral-primary-soft block max-w-sm border   shadow-black shadow-lg h-[535px] rounded-xl">
+                                <a href="#">
+                                    <img class="rounded-t-base p-4" src="https://imgs.search.brave.com/X8ZYfrAXY4XXXDvyZjGDntKAa81gMXaEAxKGJVYFEYg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTUx/NjkzMzM4MS9waG90/by8zZC1yZW5kZXIt/b2YtbW9kZXJuLWZv/cmVzdC1ob3VzZS13/aXRoLXNvbGFyLXBh/bmVscy1vbi1yb29m/LWF0LW5pZ2h0Lmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1p/clBxR0FzZ0tXb1Zl/REdDVndMLWhwMEMz/SUZZYnlRMTFwd0Rp/V09HQ1FrPQ" alt="" />
+                                </a>
+                                <div class="p-6 text-center">
+                                    <h4 class="mt-3 mb-6 text-3xl font-semibold tracking-tight text-heading  ">Luxury Villas</h4>
+                                    <a href="#">
+                                        <h5 class="mt-3 mb-6 text-xl font-semibold tracking-tight text-left text-gray-600 ps-2">Experience elegant living with spacious villas in prime locations.</h5>
+                                    </a>
+                                    <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                        View More
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="bg-neutral-primary-soft block max-w-sm border  shadow-black shadow-lg h-[535px] rounded-xl">
+                                <a href="#">
+                                    <img class="rounded-t-base p-4" src="https://imgs.search.brave.com/nWrE3qUijrP7bUR7u9OCHMmUtpWf1U2TJqxRJkR6wH4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTU4/ODk5MzM3Ny9waG90/by9lbXB0eS13YXJl/aG91c2Utc3BhY2Uu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVd6czZ5WG12X201/QmhZS1oxVDZ3cmt6/b1RVNTdHVHZUZmVN/WjlFbm5fZXM9" alt="" />
+                                </a>
+                                <div class="p-6 text-center">
+                                    <h4 class="mt-4 mb-6 text-3xl font-semibold tracking-tight text-heading  ">Commercial Spaces</h4>
+                                    <a href="#">
+                                        <h5 class="mt-3 mb-6 text-xl font-semibold tracking-tight text-left text-gray-600 ps-2">Find the perfect office or retail space to grow your business any where.</h5>
+                                    </a>
+                                    <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                        View More
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bg-neutral-primary-soft block max-w-sm border shadow-black shadow-lg h-[535px] rounded-xl">
+                                <a href="#">
+                                    <img class="rounded-t-base p-4 h-64" src="https://imgs.search.brave.com/Qj5z-v-Up6ICdH8OgNQAJtCcs6PdI7Ja4i23J0Tno9o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9tb2Rl/cm4tYXBhcnRtZW50/LWJ1aWxkaW5ncy1y/ZXNpZGVudGlhbC1h/cmVhLWx1eHVyeS1j/b25kb21pbml1bS1h/cGFydG1lbnRzLW5l/d2x5LWJ1aWx0LW5l/aWdoYm9yaG9vZC0z/ODY4Njc5NTcuanBn" alt="" />
+                                </a>
+                                <div class="p-6 text-center ">
+                                    <h4 class="mt-3 mb-6 text-3xl font-semibold tracking-tight text-heading  ">Modern Apartments</h4>
+                                    <a href="#">
+                                        <h5 class="mt-3 mb-6 text-xl font-semibold tracking-tight text-left text-gray-600 ps-1 ">Comfortable, Eco and stylish apartments designed for modern lifestyles.</h5>
+                                    </a>
+                                    <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                        View More
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bg-neutral-primary-soft block max-w-sm border border-default shadow-black shadow-lg h-[535px] rounded-xl">
+                                <a href="#">
+                                    <img class="rounded-t-base p-4" src="https://imgs.search.brave.com/9hjVIuXaH_-Rb3jdIvmunpUYkQP84b8vVwvLw2S3ij8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMy/OTg1NjY4Ny9waG90/by9hLW1hcmtldC1n/YXJkZW4tdmVnZXRh/YmxlLWZhcm0uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPVdI/TURLblJjUkZHZks1/Ymx1RmhEcDRGcDcz/TlVlN3BhVUluX0xR/dTY0NEE9" alt="" />
+                                </a>
+                                <div class="p-4 text-center ">
+                                    <h4 class="mt-3 mb-6 text-3xl font-semibold tracking-tight text-heading  ">Residential Plots</h4>
+                                    <a href="#">
+                                        <h5 class="mt-3 mb-6 text-xl font-semibold tracking-tight text-left text-gray-600 ps-5">Build your dream home on premium plots in growing neighborhoods.</h5>
+                                    </a>
+                                    <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                        View More
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+             <section class="">
+                <div class="grid grid-cols-2 gap-12 mx-18 ">
+                 <div class="m-15 p-8 space-y-4 ">
+                   <a href=""> <p class="text-blue-700">ABOUT US</p></a>
+                    <h1 class="text-3xl">We Help You Find Best Properties</h1>
+                    <p>Finding the right property can be easier with the right guidance. Whether you're looking for a dream home, a modern apartment, a commercial space, or the perfect plot, we're here to help you find a property that matches your needs and budget.</p>
+                    <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-cyan-800 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-cyan-200 my-4">
+                        <span class="relative px-5 py-2.5 transition-all duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                        View Details
+                        </span>
+                    </button>
+                </div>
+                <div class="m-15">
+                    <img class="mx-auto shadow-black shadow-lg" src="https://imgs.search.brave.com/gTVJxpqB8NgdljPgwhy2Y8n29BJCDJPYFvb8DxrNCyM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb3Zl/aW5jb3Jwb3JhdGVk/LmJsb2IuY29yZS53/aW5kb3dzLm5ldC9j/b250ZW50aW1hZ2Vz/L2dhbGxlcnkvNWEx/YjFlNDYtOWRhZi00/NjdmLTgyYzktNzBl/Mjg4MTk2NjRkLTEy/LWluY3JlZGlibGUt/aG9tZXMtYnktdGhl/LXNlYS1nb2xkLWNv/YXN0LWFwYXJ0bWVu/dC12aWV3LmpwZw" alt="">
+                </div>
+            </div>
+             </section>
+
+
+            <!-- footer -->
+             
+
+            <footer class="bg-neutral-primary-soft rounded-base shadow-xs  m-4">
+                <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                    <div class="sm:flex sm:items-center sm:justify-between">
+                        <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                            <img src="https://imgs.search.brave.com/RYjXlXcyIzBJ-BaFjtpljDp5iRhK_NN9RVOP8gISj5M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LXJlYWwtZXN0YXRl/LWljb24tc3ZnLWRv/d25sb2FkLXBuZy05/ODIyMTYxLnBuZz9m/PXdlYnAmdz0xMjg" class="h-7" alt="Flowbite Logo" />
+                            <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">Z-RealEstate</span>
+                        </a>
+                        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-body sm:mb-0">
+                            <li>
+                                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="my-6 border-default sm:mx-auto lg:my-8" />
+                    <span class="block text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/" class="hover:underline">Z-RealEstate™</a>. All Rights Reserved.</span>
+                </div>
+            </footer>
+
+
+
+
+
+        <!-- flowbite script -->
+<script  src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
+</html>
