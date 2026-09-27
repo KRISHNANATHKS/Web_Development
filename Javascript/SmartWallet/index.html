@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="bg-[#0f172a] px-8 py-5 shadow-md ">
+         <div class="max-w-6xl mx-auto flex justify-between items-center ">
+            <div class="flex gap-3 items-center">
+                <div class="rounded-full bg-[#0f766e] text-2xl text-white font-bold px-2 py-1">W</div>
+                <p class="font-bold text-2xl text-white">Welcome <span>Mate</span> To Smart Wallet</p>
+            </div>
+            <button class="bg-[#0d9488] p-2  hover:shadow-md shadow-gray-500 transition duration-300 rounded-md">Logout<span>⏻</span></button>
+        </div>
+    </header>
+
+     <main>
+            <div class="max-w-7xl mx-auto rounded-xl shadow-[0_0_25px_rgba(0,0,0,0.25)] p-4 m-5">
+                <div class="grid  md:grid-cols-2 gap-4 ">
+                    <div class="space-y-8 text-center p-5 rounded-xl shadow-xl">
+                        <div>
+                            <h1>Total Balance</h1>
+                            <h1 id="changes">Avail Balance in $2000</h1>
+                        </div>
+                        <h1 class="text-2xl border-b p-4 ">Add Income</h1>
+                        <div>
+                            <input id="itype" type="text" placeholder="Income Type" class="block w-full p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400  my-4">
+                            <input id="tincome" type="text" placeholder="Income " class=" block w-full  p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
+                            <button onclick="AddIncome()" class="bg-blue-400 p-4 rounded-xl">Add payments</button>
+                        </div>
+                    </div>
+
+
+                    <div class="space-y-8 text-center p-5 rounded-xl shadow-xl">
+                        <div>
+                            <h1>Total Balance</h1>
+                            <h1>Avail Balance in $2000</h1>
+                        </div>
+                        <h1 class="text-2xl border-b p-4">Add Income</h1>
+                        <div>
+                            <input type="text" placeholder="Income Type" class="block w-full p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
+                            <input type="text" placeholder="Income " class=" block w-full  p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
+                            <button class="bg-blue-400 p-4 rounded-xl">Add payments</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class=" text-center">
+                    <input type="text" id="Keys" placeholder="Enter Key  Or Enter all" class="   p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
+                    <button onclick="ClearData()" class="p-3 bg-pink-400 text-white m-8 rounded-md hover:shadow-xl transition duration-400">Clear All Data</button>
+                </div>
+
+            </div>
+     </main>
+     <script>
+        function AddIncome(){
+            const Data={
+                type:itype.value ,
+                income:tincome.value
+            }
+            console.log(Data);
+            if(Data.type!=""&& Data.income!=""){
+                localStorage.setItem(Data.type,JSON.stringify(Data));
+
+                changes.innerText=`Availabel Balance is $ ${Data.income}`
+            
+            }
+            else{
+                alert("Enter A Valid Income OR Type")
+            }
+            itype.value=""
+            tincome.value=''
+
+        }
+
+        function ClearData(){
+            const key=Keys.value 
+            if(key in localStorage){
+                alert(`Going to clear the Data ${key}`)
+                keyvalue=JSON.parse(localStorage.getItem(key));
+                console.log(keyvalue)
+                localStorage.removeItem(key);
+            }
+            else if(key.toLowerCase() === 'all' ){
+                localStorage.clear()
+            }
+            else{
+                alert('Enter a valid key');
+            }
+      }
+     </script>
+</body>
+</html>
