@@ -3,76 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Smart Wallet</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <header class="bg-[#0f172a] px-8 py-5 shadow-md ">
-         <div class="max-w-6xl mx-auto flex justify-between items-center ">
+    <header class="bg-[#F5EFE6] px-8 py-5 shadow-md ">
+         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex gap-3 items-center">
-                <div class="rounded-full bg-[#0f766e] text-2xl text-white font-bold px-2 py-1">W</div>
-                <p class="font-bold text-2xl text-white">Welcome <span>Mate</span> To Smart Wallet</p>
+                <div class="rounded-full bg-[#8B5E3C] text-3xl text-white font-bold px-4 pb-3 py-2">◈</div>
+                <div>
+                    <p class="font-bold text-3xl text-[#2E2723]"> SmartWallet</p>
+                    <p class="text-[#756A61] mt-1">Track your spending. Plan your budget. Spend smarter.</p>
+                </div>
             </div>
-            <button class="bg-[#0d9488] p-2  hover:shadow-md shadow-gray-500 transition duration-300 rounded-md">Logout<span>⏻</span></button>
+            <button class="bg-[#6F4E37] p-2  hover:shadow-md shadow-gray-500 transition duration-300 rounded-md text-white ">Logout<span class="ml-2">⏻</span></button>
         </div>
     </header>
 
-     <main>
-            <div class="max-w-7xl mx-auto rounded-xl shadow-[0_0_25px_rgba(0,0,0,0.25)] p-4 m-5">
-                <div class="grid  md:grid-cols-2 gap-4 ">
-                    <div class="space-y-8 text-center p-5 rounded-xl shadow-xl">
-                        <div>
-                            <h1>Total Balance</h1>
-                            <h1 id="changes">Avail Balance in $2000</h1>
-                        </div>
-                        <h1 class="text-2xl border-b p-4 ">Add Income</h1>
-                        <div>
-                            <input id="itype" type="text" placeholder="Income Type" class="block w-full p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400  my-4">
-                            <input id="tincome" type="text" placeholder="Income " class=" block w-full  p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
-                            <button onclick="AddIncome()" class="bg-blue-400 p-4 rounded-xl">Add payments</button>
-                        </div>
-                    </div>
+    <section class="my-4">
+        <div class="grid md:grid-cols-2 max-w-7xl mx-auto gap-6 ">
+            <div class="bg-[#F3E8D3] shadow-[0_0_15px_rgba(0,0,0,0.25)] hover:shadow-xl rounded-xl transition duration-800 p-4 space-y-2">
+                <p class="text-[#756A61] text-3xl font-semibold tracking-wide">Total Earnings</p>
+                <h1 id="earning" class="text-[#4F7A5A] text-4xl font-bold"><span class=" p-1 font-bold text-5xl">+</span>$0</h1>
+                <p class="text-[#8A7B70] ">Total Income Added to the Wallet</p>
+            </div>
+            <div class="bg-[#F3E8D3] shadow-[0_0_15px_rgba(0,0,0,0.25)] hover:shadow-xl rounded-xl transition duration-800 p-4 space-y-2">
+                <p class="text-[#756A61] text-3xl font-semibold tracking-wide">Total Expenditure</p>
+                <h1 id="expense" class="text-[#A65353] text-4xl font-bold"><span class=" p-1 font-bold text-5xl">-</span>$0</h1>
+                <p class="text-[#8A7B70] ">Total Income Deducted from the Wallet</p>
+            </div>
 
+         
 
-                    <div class="space-y-8 text-center p-5 rounded-xl shadow-xl">
-                        <div>
-                            <h1>Total Balance</h1>
-                            <h1>Avail Balance in $2000</h1>
-                        </div>
-                        <h1 class="text-2xl border-b p-4">Add Income</h1>
-                        <div>
-                            <input type="text" placeholder="Income Type" class="block w-full p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
-                            <input type="text" placeholder="Income " class=" block w-full  p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
-                            <button class="bg-blue-400 p-4 rounded-xl">Add payments</button>
-                        </div>
-                    </div>
+    <!-- Add Income -->
+                <div class="bg-[#FFFDF8] space-y-6 text-center p-6 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.25)] hover:shadow-xl transition duration-500">
+
+        <div>
+            <p class="text-[#756A61] text-lg font-semibold tracking-wide">
+               Amount Last Added
+            </p>
+
+            <h1 id="changes" class="text-[#4F7A5A] text-4xl font-bold mt-2">
+                $0
+            </h1>
+        </div>
+
+        <h1 class="text-2xl font-bold text-[#2E2723] border-b border-[#E5D8C8] pb-4">
+            Add Income
+        </h1>
+
+        <div>
+            <input
+                id="itype"
+                type="text"
+                placeholder="Income Type"
+                class="block w-full p-3 rounded-xl border border-[#D8CBBE] outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-[#C9A66B] my-4"
+            >
+
+            <input
+                id="tincome"
+                type="text"
+                placeholder="Income Amount"
+                class="block w-full p-3 rounded-xl border border-[#D8CBBE] outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-[#C9A66B] my-4"
+            >
+
+            <button
+                onclick="AddIncome()"
+                class="bg-[#4F7A5A] hover:bg-[#3D6247] text-white px-6 py-3 rounded-xl font-semibold transition duration-300 hover:shadow-md"
+            >
+                + Add Income
+            </button>
+        </div>
+
                 </div>
-                
-                <div class=" text-center">
-                    <input type="text" id="Keys" placeholder="Enter Key  Or Enter all" class="   p-2 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-pink-400 my-4">
-                    <button onclick="ClearData()" class="p-3 bg-pink-400 text-white m-8 rounded-md hover:shadow-xl transition duration-400">Clear All Data</button>
+
+
+    <!-- Add Expenditure -->
+                 <div class="bg-[#FFFDF8] space-y-6 text-center p-6 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.25)] hover:shadow-xl transition duration-500">
+
+        <div>
+            <p class="text-[#756A61] text-lg font-semibold tracking-wide">
+                Amount Last Deducted
+            </p>
+
+            <h1 id="echange" class="text-[#4F7A5A] text-4xl font-bold mt-2">
+                $0
+            </h1>
+        </div>
+
+        <h1 class="text-2xl font-bold text-[#2E2723] border-b border-[#E5D8C8] pb-4">
+            Add Expenditure
+        </h1>
+
+        <div>
+            <input
+                id="etype"
+                type="text"
+                placeholder="Expense Type"
+                class="block w-full p-3 rounded-xl border border-[#D8CBBE] outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-[#C9A66B] my-4"
+            >
+
+            <input
+             id="eincome"
+                type="text"
+                placeholder="Expense Amount"
+                class="block w-full p-3 rounded-xl border border-[#D8CBBE] outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-[#C9A66B] my-4"
+            >
+
+            <button
+                onclick="Expense()"
+                class="bg-[#A65353] hover:bg-[#8F4545] text-white px-6 py-3 rounded-xl font-semibold transition duration-300 hover:shadow-md"
+            >
+                − Add Expense
+            </button>
+        </div>
+
+                 </div>
+
+
+        </div>
+    </section>
+
+     <main>
+           <div class="max-w-7xl mx-auto rounded-xl shadow-[0_0_25px_rgba(0,0,0,0.25)] p-6 m-5 bg-[#FFFDF8]">
+
+            <div class="grid md:grid-cols-2 gap-6 items-center ">
+
+                <!-- Balance -->
+                <div class="text-center md:text-left p-5 ml-22">
+                    <p id="baltext" class="text-[#756A61] text-lg font-semibold tracking-wide">
+                        Available Balance
+                    </p>
+
+                    <h1 id="balance" class="text-4xl font-bold text-[#6F4E37] mt-2">
+                        $0
+                    </h1>
+
+                    <p class="text-[#8A7B70] mt-2">
+                        Current balance available in your wallet
+                    </p>
+                </div>
+
+
+                <!-- Clear Data -->
+                <div class="text-center md:text-right p-5 mr-22">
+
+                    <h2 class="text-xl font-bold text-[#2E2723] mb-3 ">
+                        Manage Wallet Data
+                    </h2>
+
+                    <input
+                        type="text"
+                        id="Keys"
+                        placeholder="Enter key or Type"
+                        class="p-3 w-full md:w-64 rounded-xl border border-gray-300 outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-[#C9A66B]"
+                    >
+
+                    <button
+                        onclick="ClearData()"
+                        class=" block mx-auto md:ml-auto md:mr-0 bg-[#8F4545] hover:bg-[#6F3030] text-white px-6 py-3 my-3 rounded-xl font-semibold hover:shadow-xl transition duration-500 "
+                    >
+                        Clear Data
+                    </button>
+
+                    <p class="text-sm text-[#8A7B70]">
+                        Remove a specific entry by "Type" or "Key"
+                    </p>
+
                 </div>
 
             </div>
+
+            </div>
+            
      </main>
+<section class="max-w-7xl mx-auto p-5 grid md:grid-cols-2 gap-3">
+    <div class="bg-[#FFFDF8] rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.25)] p-6 overflow-x-auto">
+
+        <h2 class="text-2xl font-bold text-[#2E2723] mb-5">
+            Earnings History
+        </h2>
+
+        <table class="w-full text-left ">
+            <thead>
+                <tr class="border-b border-[#E5D8C8] text-[#756A61]">
+                    <th class="p-3">Type</th>
+                    <th class="p-3">Income</th>
+                    <th class="p-3">Date & Time</th>
+                </tr>
+            </thead>
+
+            <tbody id="erows">
+                
+                <tr id="first" class=" border-b border-[#E5D8C8]">
+                    <td class="p-3 text-[#2E2723]">Work</td>
+                    <td class="p-3 text-[#4F7A5A] font-semibold">$30,000</td>
+                    <td class="p-3 text-[#756A61]">03/10/2026, 10:30:45 PM</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="bg-[#FFFDF8] rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.25)] p-6 overflow-x-auto">
+
+        <h2 class="text-2xl font-bold text-[#2E2723] mb-5">
+            Expense History
+        </h2>
+
+        <table class="w-full text-left">
+            <thead>
+                <tr  class="border-b border-[#E5D8C8] text-[#756A61] ">
+                    <th class="p-3">Type</th>
+                    <th class="p-3">Income</th>
+                    <th class="p-3">Date & Time</th>
+                </tr>
+            </thead>
+
+            <tbody id="exrows">
+                <tr id="second" class=" myclss border-b border-[#E5D8C8]">
+                    <td class="p-3 text-[#2E2723]">Trip</td>
+                    <td class="p-3 text-[#4F7A5A] font-semibold">$5,000</td>
+                    <td class="p-3 text-[#756A61]">03/10/2026, 10:30:45 PM</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
      <script>
+        let total=0;
+        let reduced=0;
         function AddIncome(){
+            
             const Data={
                 type:itype.value ,
-                income:tincome.value
+                income:Number(tincome.value)
             }
             console.log(Data);
-            if(Data.type!=""&& Data.income!=""){
-                localStorage.setItem(Data.type,JSON.stringify(Data));
+             
+            if(Data.type!=""&& Data.income!="" && !isNaN(Data.income) && isNaN(Data.type)){
+                 total+=Data.income;
 
-                changes.innerText=`Availabel Balance is $ ${Data.income}`
+                 let first=document.getElementById('first')
+                 if(first){
+                    first.remove()
+                 }
+
+                erows.innerHTML+=` <tr class="border-b border-[#E5D8C8]">
+                    <td class="p-3 text-[#2E2723]">${Data.type}</td>
+                    <td class="p-3 text-[#4F7A5A] font-semibold">$${Data.income}</td>
+                    <td class="p-3 text-[#756A61]">${new Date().toLocaleString()}</td>
+                </tr>`
+
+                if(Data.type in localStorage){
+                    
+                   const fdata=JSON.parse(localStorage.getItem(Data.type))
+                   fdata.income=fdata.income+Data.income;
+                   localStorage.setItem(fdata.type,JSON.stringify(fdata))
+                    alert(`Income ${Data.income} Added to ${Data.type}`)
+                     changes.innerText=` $${Data.income}`
+                      balance.innerText=`$${fdata.income}`
+                      baltext.innerText=`Available Balance in ${fdata.type}`
+
+                }else{
+                    localStorage.setItem(Data.type,JSON.stringify(Data));
+
+                        changes.innerText=` $${Data.income}`
+                        alert(`Data ${Data.type} Added Successfully`)
+
+                        balance.innerText=`$${Data.income}`
+                        baltext.innerText=`Available Balance in ${Data.type}`
+
+                }
             
             }
+
             else{
                 alert("Enter A Valid Income OR Type")
             }
             itype.value=""
             tincome.value=''
+            earning.lastChild.nodeValue=`$${total}`
 
         }
 
@@ -83,13 +295,59 @@
                 keyvalue=JSON.parse(localStorage.getItem(key));
                 console.log(keyvalue)
                 localStorage.removeItem(key);
-            }
-            else if(key.toLowerCase() === 'all' ){
-                localStorage.clear()
+                alert(`Data of ${key} Removed`)
             }
             else{
                 alert('Enter a valid key');
             }
+            Keys.value=''
+      }
+
+      function Expense(){
+        const type=etype.value
+        const vincome=eincome.value
+        if(type in localStorage){
+           
+            data=JSON.parse(localStorage.getItem(type))
+            console.log(data)
+            data.income=data.income-vincome;
+
+          if(data.income>=0 && vincome!=''){
+             reduced-=vincome
+
+            console.log(data)
+            localStorage.setItem(data.type,JSON.stringify(data))
+
+            echange.innerText=`$${vincome}`
+
+            alert(`Amount ${vincome} Deducted Successfully from ${type}`)
+            balance.innerText=`$${data.income}`
+            baltext.innerText=`Available Balance in ${data.type}`
+
+            // expense table
+            let second=document.getElementById("second")
+            if(second){
+                second.remove()
+            }
+            exrows.innerHTML+=
+            ` <tr class="border-b border-[#E5D8C8]">
+                    <td class="p-3 text-[#2E2723]">${type}</td>
+                    <td class="p-3 text-[#4F7A5A] font-semibold">$${vincome}</td>
+                    <td class="p-3 text-[#756A61]">${new Date().toLocaleString()}</td>
+                </tr>`
+                
+         }
+
+         else{
+            alert(`Insufficient Balance in ${data.type} `)
+         }
+        }
+        else{
+            alert(`Enter a valid Type or income`)
+        }
+        etype.value=''
+        eincome.value=''
+        expense.lastChild.nodeValue=`$${Math.abs(reduced)}`
       }
      </script>
 </body>

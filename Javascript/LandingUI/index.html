@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft - Build • Learn • Create</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+      <link rel="icon" href="../LandingUI/Login/logo.png">
+      
+    <!-- Flowbite -->
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</head>
+<body  class=" min-h-screen bg-gradient-to-tr from-[#111827]  to-[#111827]">
+    <header id="home" class="bg- bg-[#111827] shadow-xl shadow-[#438F80]  ">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-4">
+            <div class="flex gap-3 items-center justify-center ">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-prurple-600 to-purple-800 flex items-center justify-center text-white text-xl font-bold shadow-md pb-1">
+                    &lt;/&gt;
+                </div>
+            
+                <div>
+                    <h1 class="text-2xl font-bold text-white tracking-tight">
+                    CodeCraft
+                </h1>
+                    <p class="text-xs text-gray-300">
+                        Build • Learn • Create
+                    </p>
+                </div>
+                
+            
+        </div>
+        <div class="hidden md:block">
+            <a href="#home" class=" text-gray-400   hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827] px-4 py-1 rounded-xl shadow-xl hover:text-purple-400 "><i class="fa-solid fa-house mr-1"></i>  Home</a>
+            <a href="#tools" class=" text-gray-400   hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827] px-4 py-1 rounded-xl shadow-xl hover:text-purple-400">  <i class="fa-solid fa-screwdriver-wrench"></i>  Tools</a>
+            <a href="#footer" class=" text-gray-400   hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827] px-4 py-1 rounded-xl shadow-xl hover:text-purple-400"><i class="fa-solid fa-user"></i>  About</a>
+            <a href="#footer" class=" text-gray-400   hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827] px-4 py-1 rounded-xl shadow-xl hover:text-purple-400"><i class="fa-solid fa-envelope"></i> Contact</a>
+
+        </div>
+        <div data-dropdown-toggle="logoutwind" class="flex justify-center items-center gap-2 hover:cursor-pointer  hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827]   px-4 py-2 hover:rounded-3xl hover:shadow-xl">
+            <div id="Firstlet" class="rounded-full bg-purple-500 px-4 py-2 text-md font-bold text-white">K</div>
+            <p id="useName" class="text-md font-semibold text-white  " > Krishnanathks</p>
+
+            <!-- data dropdown -->
+            <div id="logoutwind" class="absolute  hidden z-50 md:right-38 mt-55  bg-[#242B3D]  border border-[#438F80] 
+                            rounded-2xl shadow-lg overflow-hidden md:w-40  space-y-1">
+               <div class="py-2">
+                 <a href="#home" class="block px-5 py-3 text-sm font-medium
+                                    text-white hover:bg-gray-600">Home</a>
+                <a href="#tools" class="block px-5 py-3 text-sm font-medium
+                                    text-white hover:bg-gray-600 border-b border-[#438F80] ">Tools</a>
+                <a href="./Login/index.html" class="block px-5 py-3 text-sm font-medium
+                                    text-gray-300 hover:bg-gray-600">Logout</a>
+               </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="max-w-7xl mx-auto m-9 p-5 space-y-2">
+            <p class="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-[#467DAA] bg-clip-text text-transparent md:w-50">Welcome Back,</p>
+            <h3 id="wname" class="text-5xl md:w-80 font-bold bg-gradient-to-r from-[#467DAA] via-purple-500 to-pink-500 bg-clip-text text-transparent">John David!!</h3>
+            <p class="md:w-130 py-5 text-gray-400">CodeCraft is a collection of practical web tools designed to simplify everyday tasks through simple, interactive, and user-friendly applications.</p>
+        </div>
+    </section>
+
+    <main id="tools" class=" scroll-mt-20 max-w-7xl mx-auto m-9 p-5">
+        <div class=" grid md:grid-cols-3 gap-8">
+
+         <div class="bg-gradient-to-tr from-[#111827] to-red-500 rounded-xl border border-2 border-red-500 p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-red-500 transform duration-300">
+            <div ><i class="fa-solid fa-calculator bg-red-600/70 rounded-xl p-4 text-2xl border border-[#E8BBD0] text-red-300 "></i></div>
+            <h1 class="text-red-300  font-bold text-xl">Calculator</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-red-300  w-60 ">Perform basic mathematical operations quickly and easily with a simple, interactive calculator interface.</p>
+                <button class="bg-red-600  text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-red-300" >-></button>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-tr from-[#111827] to-[#438F80]  rounded-xl border border-2 border-[#438F80] p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-[#438F80]  transform duration-300">
+            <div ><i class="fa-solid fa-weight-scale bg-[#2F6F63]/70 rounded-xl p-4 text-2xl border border-[#8DD3C3] text-[#DFF4EF] "></i></div>
+            <h1 class="text-[#DFF4EF]  font-bold text-xl">BMI Calculator</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-[#DFF4EF]  w-60 ">Calculate your Body Mass Index using your height and weight, and get an indication of your BMI category.</p>
+                <button class="bg-[#2F6F63] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#438F80]" >-></button>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-tr from-[#111827] to-[#467DAA]  rounded-xl border border-2 border-[#467DAA] p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-[#467DAA] transform duration-300">
+            <div ><i class="fa-solid fa-car bg-[#24527A]/70 rounded-xl p-4 text-2xl border border-[#BCD9ED] text-[#8DB7D8] "></i></div>
+            <h1 class="text-[#8DB7D8]  font-bold text-xl">Car Log</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-[#8DB7D8] w-60 ">Manage your car collection by adding, viewing, and deleting car details through an interactive interface.</p>
+                <button class="bg-[#315F86] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#BCD9ED]" >-></button>
+            </div>
+        </div>
+
+         <div class="bg-gradient-to-tr from-[#111827] to-purple-900  rounded-xl border border-2 border-purple-500 p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-purple-900 transform duration-300">
+            <div ><i class="fa-solid fa-building-columns bg-purple-900/70 rounded-xl p-4 text-2xl border border-purple-400 text-purple-300 "></i></div>
+            <h1 class="text-purple-300 font-bold text-xl">Banking</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-purple-300 w-60 ">Explore basic banking operations such as account management, balance checking, deposits, and withdrawals.</p>
+                <button class="bg-purple-800 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-purple-400" >-></button>
+            </div>
+        </div>
+
+         <div class="bg-gradient-to-tr from-[#111827] to-pink-500  rounded-xl border border-2 border-pink-500 p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-pink-500 transform duration-300">
+            <div ><i class="fa-solid fa-wallet bg-[#7F2F57]/70 rounded-xl p-4 text-2xl border border-[#E8BBD0] text-[#E8BBD0] "></i></div>
+            <h1 class="text-[#D99AB9]  font-bold text-xl">SmartWallet</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-[#D99AB9]  w-60 ">Manage your personal finances by tracking income, expenses, and spending in a simple and organized wallet interface.</p>
+                <button class="bg-pink-600 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#E8BBD0]" >-></button>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-tr from-[#111827] to-[#D97706]  rounded-xl border border-2 border-[#D97706] p-5 space-y-4 shadow-xl     hover:-translate-y-2 hover:shadow-[#D97706] transform duration-300">
+            <div ><i class="fa-solid fa-list-check bg-[#D97706]/70 rounded-xl p-4 text-2xl border border-[#F9D7A8] text-[#F9D7A8] "></i></div>
+            <h1 class="text-[#F9D7A8]  font-bold text-xl">To-Do List</h1>
+            <div class="flex justify-between items-end">
+                <p class="text-[#F9D7A8]  w-60 ">Create, manage, edit, complete, and delete daily tasks while keeping track of your productivity and progress.</p>
+                <button class="bg-[#D97706] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#F9D7A8]" >-></button>
+            </div>
+        </div>
+       
+        </div>
+        
+    </main>
+        <footer id="footer" class="mt-16 bg-[#0B1120] border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-5 py-8">
+
+                <div class="flex flex-col md:flex-row justify-between items-center gap-5">
+
+                    <!-- Logo / Description -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                            CodeCraft
+                        </h2>
+
+                        <p class="text-sm text-gray-400 mt-1">
+                            Build • Learn • Create
+                        </p>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="flex gap-6 text-sm">
+                        <a href="#home" class="text-gray-400 hover:text-purple-400 transition duration-300">
+                            Home
+                        </a>
+
+                        <a href="#tools" class="text-gray-400 hover:text-purple-400 transition duration-300">
+                            Tools
+                        </a>
+
+                        <a href="#footer" class="text-gray-400 hover:text-purple-400 transition duration-300">
+                            About
+                        </a>
+
+                        <a href="#footer" class="text-gray-400 hover:text-purple-400 transition duration-300">
+                            Contact
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Bottom -->
+                <div class="border-t border-gray-800 mt-6 pt-5 text-center">
+                    <p class="text-sm text-gray-500">
+                        © 2026 CodeCraft. All rights reserved.
+                    </p>
+                </div>
+
+            </div>
+        </footer>
+
+        <script>
+            const name=JSON.parse(localStorage.getItem("UserName"))
+            console.log(name)
+            wname.innerText=`${name}!! `
+            const firstletter=name[0];
+            Firstlet.innerText=`${firstletter}`;
+            useName.innerText=`${name}`
+        </script>
+
+</body>
+</html>

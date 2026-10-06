@@ -28,8 +28,8 @@
             </div>
 
             <div class="text-right">
-                <p class="text-sm text-pink-200">Today's Tasks</p>
-                <p class="text-2xl font-bold">12</p>
+                <p class="text-sm text-pink-200">Total Tasks</p>
+                <p id="num" class="text-2xl font-bold">0</p>
             </div>
 
         </div>
@@ -86,20 +86,18 @@
 
             <div class="flex gap-2">
 
-                <button class="px-4 py-2 rounded-lg
-                               bg-[#3b1028] text-white">
+                <button onclick="filtertask('all')" id="all"  class=" px-4 py-2 rounded-lg
+                               bg-[#866879] text-white  transition ">
                     All
                 </button>
 
-                <button class="px-4 py-2 rounded-lg
-                               bg-[#dbeafe] text-blue-700
-                               hover:bg-blue-200 transition">
+                <button onclick="filtertask('active')" id="active" class="px-4 py-2 rounded-lg
+                               bg-blue-400 text-white transition ">
                     Active
                 </button>
 
-                <button class="px-4 py-2 rounded-lg
-                               bg-orange-100 text-orange-700
-                               hover:bg-orange-200 transition">
+                <button onclick="filtertask('completed')" id="completed" class="px-4 py-2 rounded-lg
+                               bg-green-300 text-white  transition ">
                     Completed
                 </button>
 
@@ -109,153 +107,46 @@
 
 
         <!-- Tasks -->
-        <div id="Taskbar" class="grid md:grid-cols-2 gap-5">
+        <div id="Taskbar" class="grid md:grid-cols-2 gap-5 ">
 
-            <!-- Task 1 -->
-            <div class="bg-white rounded-xl p-5 shadow-md
+           
+
+             <!-- Task 1 -->
+             
+            <div id="task1" class="bg-white rounded-xl p-5 shadow-md
                         border-l-4 border-blue-500
                         hover:shadow-xl hover:-translate-y-1
-                        transition duration-300">
+                        transition duration-300 space-y-4 flex flex-col text-center ">
 
-                <div class="flex justify-between items-start ">
-
-                    <div>
-                        <h3 class="text-lg font-bold text-[#3b1028]">
-                            Learn JavaScript
-                        </h3>
-
-                        <p class="text-gray-500 text-sm mt-2">
-                            Practice arrays, objects and functions.
-                        </p>
-                    </div>
-
-                    <span class="bg-blue-100 text-blue-700
-                                 text-xs font-semibold
-                                 px-3 py-1 rounded-full">
-                        Active
+               <div class="space-y-4">
+                    <h1 class="text-2xl text-gray-400">
+                       Task 1
+                    </h1>
+                   <span class="text-sm text-gray-400">
+                       Task Will Be Displayed Here....
                     </span>
-
-                </div>
-
-                <div class="flex justify-between items-center mt-5">
-
-                    <span class="text-sm text-gray-400">
-                        Today
-                    </span>
-
-                    <div class="flex gap-2">
-
-                        <button class="text-green-600
-                                       hover:bg-green-100
-                                       px-3 py-2 rounded-lg">
-                            ✓
-                        </button>
-
-                        <button class="text-orange-600
-                                       hover:bg-orange-100
-                                       px-3 py-2 rounded-lg">
-                            ✎
-                        </button>
-
-                        <button class="text-red-600
-                                       hover:bg-red-100
-                                       px-3 py-2 rounded-lg">
-                            🗑
-                        </button>
-
-                    </div>
-
-                </div>
-
+               </div>
             </div>
 
 
             <!-- Task 2 -->
-            <div class="bg-white rounded-xl p-5 shadow-md
-                        border-l-4 border-orange-500
+            <div id="task2" class="bg-white rounded-xl p-5 shadow-md
+                        border-l-4 border-blue-500
                         hover:shadow-xl hover:-translate-y-1
-                        transition duration-300">
+                        transition duration-300 space-y-4 flex flex-col text-center ">
 
-                <div class="flex justify-between items-start">
-
-                    <div>
-                        <h3 class="text-lg font-bold text-[#3b1028]">
-                            Complete Project
-                        </h3>
-
-                        <p class="text-gray-500 text-sm mt-2">
-                            Finish the To-Do List project.
-                        </p>
-                    </div>
-
-                    <span class="bg-orange-100 text-orange-700
-                                 text-xs font-semibold
-                                 px-3 py-1 rounded-full">
-                        Important
+               <div class="space-y-4">
+                    <h1 class="text-2xl text-gray-400">
+                       Task 2
+                    </h1>
+                   <span class="text-sm text-gray-400">
+                       Task Will Be Displayed Here....
                     </span>
-
-                </div>
-
-                <div class="flex justify-between items-center mt-5">
-
-                    <span class="text-sm text-gray-400">
-                        Tomorrow
-                    </span>
-
-                    <div class="flex gap-2">
-
-                        <button class="text-green-600
-                                       hover:bg-green-100
-                                       px-3 py-2 rounded-lg">
-                            ✓
-                        </button>
-
-                        <button class="text-orange-600
-                                       hover:bg-orange-100
-                                       px-3 py-2 rounded-lg">
-                            ✎
-                        </button>
-
-                        <button class="text-red-600
-                                       hover:bg-red-100
-                                       px-3 py-2 rounded-lg">
-                            🗑
-                        </button>
-
-                    </div>
-
-                </div>
-
+               </div>
             </div>
 
 
-            <!-- Completed Task -->
-            <div class="bg-white rounded-xl p-5 shadow-md
-                        border-l-4 border-green-500
-                        opacity-80">
-
-                <div class="flex justify-between items-start">
-
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-500 line-through">
-                            Create HTML Structure
-                        </h3>
-
-                        <p class="text-gray-400 text-sm mt-2">
-                            Basic page structure completed.
-                        </p>
-                    </div>
-
-                    <span class="bg-green-100 text-green-700
-                                 text-xs font-semibold
-                                 px-3 py-1 rounded-full">
-                        Completed
-                    </span>
-
-                </div>
-
-            </div>
-
+           </div>
         </div>
 
     </main>

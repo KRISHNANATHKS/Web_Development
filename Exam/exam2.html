@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class=" flex flex-col  items-center justify-center mx-auto p-10 bg-gray-500">
+    <button onclick="display()" class="bg-pink-400 rounded-xl p-4 outline-none hover:ring-2 hover:ring-purple-400 shadow-xl mb-5 hover:-translate-y-2 hover:shadow-2xl transition duration-300">Generate</button>
+    <div id="mycls" class="rounded-xl shadow-xl  p-4 grid grid-cols-3 gap-4 border border-gray-300 ">
+        <div id="rand"  class="text-gray-300 text-center"><p>Data will be Displayed here one by one..</p></div>
+    </div>
+
+    <script>
+        
+       async function datares(){
+            const response= await fetch("https://randomuser.me/api/");
+            const data= await response.json();
+            console.log(data)
+            return(data.results)
+        }
+        async function display(data) {
+            const myid=document.getElementById("rand")
+            if(myid){
+                myid.remove()
+            }
+
+            const datas=await datares();
+            console.log(datas)
+            datas.forEach(ele => {
+            mycls.innerHTML+=`<div class="p-5 bg-gray-800 text-white rounded-xl border border-gray-700 shadow-lg hover:scale-105 transition duration-300">
+                <img src="${ele.picture.large}" 
+                    alt="" 
+                    class=" rounded-full mx-auto mb-4">
+
+                <div class="space-y-2">
+                    <p><span class="text-gray-400">Name:</span> ${ele.name.first}</p>
+                    <p><span class="text-gray-400">Email:</span> ${ele.email}</p>
+                    <p><span class="text-gray-400">Location:</span> ${ele.location.city}</p>
+                    <p><span class="text-gray-400">Phone:</span> ${ele.phone}</p>
+                </div>
+            </div>`
+            });
+
+            alert(`User Generated`)
+        }
+        
+    </script>
+</body>
+</html>

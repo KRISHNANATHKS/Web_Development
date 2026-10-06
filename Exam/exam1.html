@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gray-900 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl p-6">
+
+        <div class="flex justify-center gap-3 mb-8">
+            <input id="names" class="p-3 rounded-lg bg-gray-800 border border-gray-600 text-white outline-none focus:border-pink-500" type="text" placeholder="Enter Bookname">
+
+            <input id="au" class="p-3 rounded-lg bg-gray-800 border border-gray-600 text-white outline-none focus:border-pink-500" type="text" placeholder="Enter Author">
+
+            <input id="ca" class="p-3 rounded-lg bg-gray-800 border border-gray-600 text-white outline-none focus:border-pink-500" type="text" placeholder="Enter Category">
+
+            <button onclick="display()" class="px-5 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 cursor-pointer">
+                Add book
+            </button>
+        </div>
+
+        <div id="mydis" class="grid grid-cols-3 gap-5">
+
+        </div>
+
+    </div>
+
+    <script>
+        function display(){
+           if(names.value!=''&& au.value!=''&&ca.value!=""){
+             mydis.innerHTML+=`<div class="p-4 space-y-4 bg-gray-800 rounded-xl border border-gray-700 text-white">
+                <h1> ${names.value}</h1>
+                <h2>${au.value}</h2>
+                <h3>${ca.value}</h3>
+                <button onclick="updated(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Update</button>
+                <button onclick="deleted(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Delete</button>
+            </div>`
+
+            const data ={
+                BookName:names.value,
+                Author:au.value,
+                Category:names.value,
+
+            }
+             localStorage.setItem(data.BookName,JSON.stringify(data))
+           }
+           else{
+            alert('Enter a valid Data')
+           }
+           
+            names.value=""
+            au.value=""
+            ca.value=""
+        }
+
+        function deleted(btn){
+            const key = btn.parentElement.querySelector("h1").innerText;
+            localStorage.removeItem(key);
+            btn.parentElement.remove()
+           
+            
+            
+        }
+
+             function updated(btn){
+                    const data=btn.parentElement.parentElement.querySelector("h1").innerText;
+                    const adata=btn.parentElement.parentElement.querySelector("h2").innerText;
+                    const cdata=btn.parentElement.parentElement.querySelector("h3").innerText;
+
+                    const nname= prompt(`update Book name`,data)
+                    const naut= prompt(`update Author`,adata)
+                    const nca= prompt(`update Category`,cdata)
+
+                    localStorage.removeItem(data);
+
+                    const newdata = {
+                        BookName: nname,
+                        Author: naut,
+                        Category: nca
+                    }
+
+                    localStorage.setItem(nname, JSON.stringify(newdata));
+
+                    btn.parentElement.parentElement.innerHTML=`<div class="p-4 space-y-4 bg-gray-800 rounded-xl border border-gray-700 text-white">
+                        <h1> ${nname}</h1>
+                        <h2>${naut}</h2>
+                        <h3>${nca}</h3>
+                        <button onclick="updated(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Update</button>
+                        <button onclick="deleted(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Delete</button>
+                    </div>`
+                }
+    </script>
+</body>
+</html>
