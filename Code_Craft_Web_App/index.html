@@ -9,7 +9,7 @@
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-          <link rel="icon" href="./logo.png">
+          <link rel="icon" href="./assets/logo.png">
 </head>
 
 <body class="min-h-screen bg-[#111827] flex items-center justify-center px-5">
@@ -100,6 +100,7 @@
                               -translate-y-1/2 text-gray-500"></i>
 
                     <input
+                        onkeydown="if(event.key === 'Enter') Logind()"
                         id="Upass"
                         type="password"
                         placeholder="Enter your password"
@@ -143,9 +144,9 @@
 
                 Don't have an account?
 
-                <a href="./CreateAccount.html"
+                <a onclick="createacc()" 
                    class="text-purple-400 font-semibold
-                          hover:text-pink-400 transition">
+                          hover:text-pink-400 transition hover:cursor-pointer">
                     Create Account
                 </a>
 
@@ -170,7 +171,7 @@
                 const data=JSON.parse(localStorage.getItem(uname))
                 
                 if(upass===data){
-                    window.location.replace("../index.html")
+                    window.location.replace("./landingui/index.html")
                     localStorage.setItem("UserName",JSON.stringify(uname))
                     console.log(uname)
                     alert(`Logged in Successfully!`)
@@ -184,6 +185,11 @@
             }
             Uname.value=""
             Upass.value=""
+        }
+
+        function createacc(){
+            alert(`Do you want to create a New Account`)
+            window.location.replace("./create_account/index.html")
         }
     </script>
 

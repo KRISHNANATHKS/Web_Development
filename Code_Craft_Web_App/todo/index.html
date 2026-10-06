@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List • Plan • Organize • Complete | CodeCraft</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#f6f3f7] min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-[#0d9488] text-white px-8 py-5 shadow-lg ">
+
+    <div class="max-w-6xl mx-auto  flex justify-between items-center">
+
+        <div>
+            <h1 class="text-3xl font-bold
+                       hover:drop-shadow-[0_0_2px_white]
+                       transition duration-300">
+                My To-Do List
+            </h1>
+
+            <p class="text-pink-200 mt-1">
+                Stay organized. Get things done.
+            </p>
+        </div>
+
+        <div class="">
+            
+            <div class="text-right">
+                <p class="text-sm text-pink-200">Total Tasks</p>
+                <p id="num" class="text-2xl font-bold">0</p>
+            </div>
+
+            <div class="absolute right-30 top-10 md:right-9 md:top-10">
+                <a onclick="goback()"
+                    class="bg-white text-[#0d9488] px-4 py-2 rounded-lg
+                            font-semibold hover:bg-[#ccfbf1]
+                            transition duration-300 shadow hover:cursor-pointer">
+                        🏠 Home
+                 </a>
+           </div>
+        </div>
+
+
+    </div>
+    
+
+</header>
+
+
+    <!-- Main -->
+    <main class="max-w-6xl mx-auto p-8">
+
+        <!-- Add Task -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8
+                    border border-[#eadde4]">
+
+            <h2 class="text-xl font-bold text-[#3b1028] mb-4">
+                Add New Task
+            </h2>
+
+            <div class="flex gap-3">
+
+                <input
+                    id="add"
+                    type="text"
+                    placeholder="What do you need to do?"
+                    class="flex-1 border border-gray-300 rounded-lg
+                           px-4 py-3 outline-none
+                           focus:ring-2 focus:ring-[#0d9488]
+                           focus:border-[#ccfbf1]"
+                >
+                
+
+                <button 
+                    onclick="addtodo()"
+                  
+                    class="bg-[#0d9488] text-white px-6 py-3
+                           rounded-lg font-semibold
+                           hover:bg-[#115e59]
+                           hover:shadow-lg
+                           transition duration-300">
+                    + Add Task
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Filters -->
+        <div class="flex justify-between items-center mb-5">
+
+            <h2 class="text-2xl font-bold text-[#3b1028]">
+                My Tasks
+            </h2>
+
+            <div class="flex gap-2">
+
+                <button onclick="filtertask('all')" id="all"  class=" px-4 py-2 rounded-lg
+                               bg-[#866879] text-white  transition ">
+                    All
+                </button>
+
+                <button onclick="filtertask('active')" id="active" class="px-4 py-2 rounded-lg
+                               bg-blue-400 text-white transition ">
+                    Active
+                </button>
+
+                <button onclick="filtertask('completed')" id="completed" class="px-4 py-2 rounded-lg
+                               bg-green-300 text-white  transition ">
+                    Completed
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Tasks -->
+        <div id="Taskbar" class="grid md:grid-cols-2 gap-5 ">
+
+           
+
+             <!-- Task 1 -->
+             
+            <div id="task1" class="bg-white rounded-xl p-5 shadow-md
+                        border-l-4 border-blue-500
+                        hover:shadow-xl hover:-translate-y-1
+                        transition duration-300 space-y-4 flex flex-col text-center ">
+
+               <div class="space-y-4">
+                    <h1 class="text-2xl text-gray-400">
+                       Task 1
+                    </h1>
+                   <span class="text-sm text-gray-400">
+                       Task Will Be Displayed Here....
+                    </span>
+               </div>
+            </div>
+
+
+            <!-- Task 2 -->
+            <div id="task2" class="bg-white rounded-xl p-5 shadow-md
+                        border-l-4 border-blue-500
+                        hover:shadow-xl hover:-translate-y-1
+                        transition duration-300 space-y-4 flex flex-col text-center ">
+
+               <div class="space-y-4">
+                    <h1 class="text-2xl text-gray-400">
+                       Task 2
+                    </h1>
+                   <span class="text-sm text-gray-400">
+                       Task Will Be Displayed Here....
+                    </span>
+               </div>
+            </div>
+
+
+           </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

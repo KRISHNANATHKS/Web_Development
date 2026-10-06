@@ -9,7 +9,7 @@
      <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-      <link rel="icon" href="../LandingUI/Login/logo.png">
+      <link rel="icon" href="../assets/logo.png">
       
     <!-- Flowbite -->
 
@@ -43,7 +43,7 @@
 
         </div>
         <div data-dropdown-toggle="logoutwind" class="flex justify-center items-center gap-2 hover:cursor-pointer  hover:bg-gradient-to-t hover:from-white/20  hover:to-[#111827]   px-4 py-2 hover:rounded-3xl hover:shadow-xl">
-            <div id="Firstlet" class="rounded-full bg-purple-500 px-4 py-2 text-md font-bold text-white">K</div>
+            <div id="Firstlet" class="rounded-full bg-purple-500 px-4 py-2 text-md font-bold text-white text-center">K</div>
             <p id="useName" class="text-md font-semibold text-white  " > Krishnanathks</p>
 
             <!-- data dropdown -->
@@ -65,7 +65,7 @@
     <section>
         <div class="max-w-7xl mx-auto m-9 p-5 space-y-2">
             <p class="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-[#467DAA] bg-clip-text text-transparent md:w-50">Welcome Back,</p>
-            <h3 id="wname" class="text-5xl md:w-80 font-bold bg-gradient-to-r from-[#467DAA] via-purple-500 to-pink-500 bg-clip-text text-transparent">John David!!</h3>
+            <h3 id="wname" class="text-5xl md:w-80 h-14  font-bold bg-gradient-to-r from-[#467DAA] via-purple-500 to-pink-500 bg-clip-text text-transparent">John David!!</h3>
             <p class="md:w-130 py-5 text-gray-400">CodeCraft is a collection of practical web tools designed to simplify everyday tasks through simple, interactive, and user-friendly applications.</p>
         </div>
     </section>
@@ -78,7 +78,7 @@
             <h1 class="text-red-300  font-bold text-xl">Calculator</h1>
             <div class="flex justify-between items-end">
                 <p class="text-red-300  w-60 ">Perform basic mathematical operations quickly and easily with a simple, interactive calculator interface.</p>
-                <button class="bg-red-600  text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-red-300" >-></button>
+                <button onclick="opencalculator()" class="bg-red-600  text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-red-300" >-></button>
             </div>
         </div>
 
@@ -87,7 +87,7 @@
             <h1 class="text-[#DFF4EF]  font-bold text-xl">BMI Calculator</h1>
             <div class="flex justify-between items-end">
                 <p class="text-[#DFF4EF]  w-60 ">Calculate your Body Mass Index using your height and weight, and get an indication of your BMI category.</p>
-                <button class="bg-[#2F6F63] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#438F80]" >-></button>
+                <button onclick="openbmi()" class="bg-[#2F6F63] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#438F80]" >-></button>
             </div>
         </div>
 
@@ -96,7 +96,7 @@
             <h1 class="text-[#8DB7D8]  font-bold text-xl">Car Log</h1>
             <div class="flex justify-between items-end">
                 <p class="text-[#8DB7D8] w-60 ">Manage your car collection by adding, viewing, and deleting car details through an interactive interface.</p>
-                <button class="bg-[#315F86] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#BCD9ED]" >-></button>
+                <button onclick="opencarlog()" class="bg-[#315F86] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#BCD9ED]" >-></button>
             </div>
         </div>
 
@@ -105,7 +105,7 @@
             <h1 class="text-purple-300 font-bold text-xl">Banking</h1>
             <div class="flex justify-between items-end">
                 <p class="text-purple-300 w-60 ">Explore basic banking operations such as account management, balance checking, deposits, and withdrawals.</p>
-                <button class="bg-purple-800 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-purple-400" >-></button>
+                <button onclick="openbanking()" class="bg-purple-800 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border-purple-400" >-></button>
             </div>
         </div>
 
@@ -114,7 +114,7 @@
             <h1 class="text-[#D99AB9]  font-bold text-xl">SmartWallet</h1>
             <div class="flex justify-between items-end">
                 <p class="text-[#D99AB9]  w-60 ">Manage your personal finances by tracking income, expenses, and spending in a simple and organized wallet interface.</p>
-                <button class="bg-pink-600 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#E8BBD0]" >-></button>
+                <button onclick="opensmartwallet()" class="bg-pink-600 text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#E8BBD0]" >-></button>
             </div>
         </div>
 
@@ -123,7 +123,7 @@
             <h1 class="text-[#F9D7A8]  font-bold text-xl">To-Do List</h1>
             <div class="flex justify-between items-end">
                 <p class="text-[#F9D7A8]  w-60 ">Create, manage, edit, complete, and delete daily tasks while keeping track of your productivity and progress.</p>
-                <button class="bg-[#D97706] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#F9D7A8]" >-></button>
+                <button onclick="opentodo()" class="bg-[#D97706] text-white rounded-full px-3 py-1 pb-2 shadow-xl hover:cursor-pointer border border[#F9D7A8]" >-></button>
             </div>
         </div>
        
@@ -182,11 +182,31 @@
             console.log(name)
             wname.innerText=`${name}!! `
             const firstletter=name[0];
-            Firstlet.innerText=`${firstletter}`;
+            Firstlet.innerText=`${firstletter.toUpperCase()}`;
             useName.innerText=`${name}`
 
             function ReLogin(){
-                window.location.replace("./Login/index.html")
+                window.location.replace("../index.html")
+            }
+
+            function opencalculator(){
+                window.location.href="../calculator/index.html"
+            }
+
+            function openbmi(){
+                window.location.href="../bmi/index.html"
+            }
+            function opencarlog(){
+                window.location.href="../car_log/index.html"
+            }
+            function openbanking(){
+                window.location.href="../banking/index.html"
+            }
+            function opensmartwallet(){
+                window.location.href="../smart_wallet/index.html"
+            }
+            function opentodo(){
+                window.location.href="../todo/index.html"
             }
         </script>
 

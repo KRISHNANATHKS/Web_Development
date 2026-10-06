@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator • Balance • Track • Improve | CodeCraft</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="icon" href="../assets/logo.png">
+
+</head>
+
+<body class="bg-[#f5e6eb] min-h-screen">
+
+    <div>
+    <a onclick="goback()"
+        class="fixed top-5 left-5 bg-[#3b1028] text-white px-5 py-2 rounded-lg
+                hover:bg-[#5a1a3c] transition duration-300 shadow-lg z-50 hover:cursor-pointer">
+            <i class="fa-solid fa-house mr-2"></i>
+            Home
+        </a>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="text-4xl font-bold text-center text-[#3b1028] pt-8">
+        BMI Calculator
+    </h1>
+
+    <!-- Main -->
+    <main class="max-w-6xl mx-auto p-10">
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- LEFT : CAROUSEL -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+
+                <h2 class="text-3xl font-bold text-[#3b1028] text-center mb-5">
+                    About BMI
+                </h2>
+
+                <div class="relative">
+
+                    <img
+                        id="slide"
+                        src="https://imgs.search.brave.com/ZGwzUR0fw0T4Bxf6jxoKDy82uXJNh2BAKxpdqVoroeM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZyZWUtdmVjdG9y/L2JvZHktbWFzcy1p/bmRleC13ZWlnaHQt/Y29udHJvbC13aXRo/LWJtaS1oZWFsdGh5/LXVuaGVhbHRoeS1s/aWZlc3R5bGUtZmxh/dC12ZWN0b3ItaWxs/dXN0cmF0aW9uLWZp/dG5lc3MtaW5kaWNh/dG9yLWJlZm9yZS1h/ZnRlci1kaWV0LW92/ZXJhbGwtaGVhbHRo/LWJvZHktZmF0LXNj/YWxlLWNvbmNlcHRf/ODgxMzgtNzk1Lmpw/Zz9nYT1HQTEuMS43/NDEyMDcwMjUuMTc4/NDIwNzE4OCZzZW10/PWFpc190ZXN0X2Im/dz03NDAmcT04MA"
+                        class="w-full h-96 object-contain rounded-xl"
+                    >
+
+                    <button
+                        onclick="previousImage()"
+                        class="absolute left-3 top-1/2 -translate-y-1/2
+                        bg-[#3b1028] text-white px-4 py-2 rounded-full
+                        hover:bg-[#5a1a3c]">
+                        ❮
+                    </button>
+
+                    <button
+                        onclick="nextImage()"
+                        class="absolute right-3 top-1/2 -translate-y-1/2
+                        bg-[#3b1028] text-white px-4 py-2 rounded-full
+                        hover:bg-[#5a1a3c]">
+                        ❯
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT : BMI CALCULATOR -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+
+                <h2 class="text-2xl font-bold text-[#3b1028] text-center mb-6">
+                    Check Your BMI
+                </h2>
+
+
+                <!-- ACCELEROMETER / GAUGE -->
+
+                <div class="mb-8">
+
+                    <div class="relative">
+
+                        <!-- Gauge -->
+                        <div class="flex h-8 rounded-full overflow-hidden">
+
+                            <div class="bg-blue-400 w-[18%]"></div>
+
+                            <div class="bg-green-400 w-[25%]"></div>
+
+                            <div class="bg-yellow-400 w-[20%]"></div>
+
+                            <div class="bg-red-400 w-[37%]"></div>
+                            
+
+                        </div>
+
+
+                        <!-- Indicator -->
+                        <div
+                            id="indicator"
+                            class="absolute top-[-8px] left-[0%]
+                            w-2 h-12 bg-[#3b1028]
+                            rounded-full transition-all duration-700">
+                        </div>
+
+                    </div>
+
+
+                    <!-- Labels -->
+                    <div class="flex justify-between text-sm mt-2 font-semibold">
+
+                        <span class="text-blue-500">
+                            Underweight
+                        </span>
+
+                        <span class="text-green-500">
+                            Normal
+                        </span>
+
+                        <span class="text-yellow-500">
+                            Overweight
+                        </span>
+
+                        <span class="text-red-500">
+                            Obese
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INPUTS -->
+
+                <div class="flex gap-4">
+
+                    <div class="w-1/2">
+
+                        <label class="font-semibold text-[#3b1028]">
+                            Weight (kg)
+                        </label>
+
+                        <input
+                            type="text"
+                            id="weight"
+                            placeholder="Enter weight"
+                            class="w-full border border-gray-300
+                            p-3 rounded-lg mt-2
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-[#a65370]"
+                        >
+
+                    </div>
+
+
+                    <div class="w-1/2">
+
+                        <label class=" font-semibold text-[#3b1028]">
+                            Height (cm)
+                        </label>
+
+                        <input
+                            type="text"
+                            id="height"
+                            placeholder="Enter height"
+                            class="w-full border border-gray-300
+                            p-3 rounded-lg mt-2
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-[#a65370]"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    onclick="calculateBMI()"
+                    class="w-full mt-6
+                    bg-[#3b1028] text-white
+                    p-3 rounded-lg
+                    font-semibold
+                    hover:bg-[#5a1a3c]
+                    transition duration-300">
+
+                    Calculate BMI
+
+                </button>
+
+
+                <!-- RESULT -->
+
+                <div
+                    id="result"
+                    class="mt-6 p-5
+                    bg-[#f5e6eb]
+                    rounded-xl
+                    text-center">
+
+                    <p class="text-gray-500">
+                        Your BMI Details Displayed Here
+                    </p>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        // Carousel
+
+        let images = [
+            "https://imgs.search.brave.com/ZGwzUR0fw0T4Bxf6jxoKDy82uXJNh2BAKxpdqVoroeM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZyZWUtdmVjdG9y/L2JvZHktbWFzcy1p/bmRleC13ZWlnaHQt/Y29udHJvbC13aXRo/LWJtaS1oZWFsdGh5/LXVuaGVhbHRoeS1s/aWZlc3R5bGUtZmxh/dC12ZWN0b3ItaWxs/dXN0cmF0aW9uLWZp/dG5lc3MtaW5kaWNh/dG9yLWJlZm9yZS1h/ZnRlci1kaWV0LW92/ZXJhbGwtaGVhbHRo/LWJvZHktZmF0LXNj/YWxlLWNvbmNlcHRf/ODgxMzgtNzk1Lmpw/Zz9nYT1HQTEuMS43/NDEyMDcwMjUuMTc4/NDIwNzE4OCZzZW10/PWFpc190ZXN0X2Im/dz03NDAmcT04MA",
+
+            "https://imgs.search.brave.com/ZS3lY6PnxiPBQjk1Ekqlbz7M1lLCG2446RgQRI7dP_c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTcw/MzkxODYyL3ZlY3Rv/ci9ib2R5LW1hc3Mt/aW5kZXgtdGFibGUt/d2l0aC1ibWktZm9y/bXVsYS1leGFtcGxl/LWhlYWx0aC1jYXJl/LWFuZC1maXRuZXNz/LWluZm9ybWF0aXZl/LXBvc3Rlci5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9aGJZ/WUdUTlpDTHE1U3hP/c0VEX1dyWlg5Y0kw/ZjBLMXljQzgzaGlH/akRHbz0",
+
+            "https://imgs.search.brave.com/QVu7s0fjcYuXDfi6twjgoJ3c6IM4-6NBJhypu_BDi5E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5Lzc4LzI4/LzM2MF9GXzEwOTc4/Mjg4MV85YjBrbEtw/a1A4eHVWTU9DWlRu/WUtRTWJUVFh6aUps/aC5qcGc",
+
+            "https://imgs.search.brave.com/4amElYLaY0tU9te392y7doazfcHGIC0VPny8Qiieh0w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZyZWUtcGhvdG8v/a2V0dGxlYmVsbC1n/eW0tZXF1aXBtZW50/LXN0aWxsLWxpZmVf/MjMtMjE1MTczOTI0/Ny5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQwJnE9ODA",
+            "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        ];
+
+        let currentImage = 0;
+
+
+        function nextImage() {
+
+            currentImage++;
+
+            if (currentImage >= images.length) {
+                currentImage = 0;
+            }
+
+            document.getElementById("slide").src = images[currentImage];
+
+        }
+
+
+        function previousImage() {
+
+            currentImage--;
+
+            if (currentImage < 0) {
+                currentImage = images.length - 1;
+            }
+
+            document.getElementById("slide").src = images[currentImage];
+
+        }
+
+
+
+        // BMI Calculator
+
+        function calculateBMI() {
+
+            let weight = Number(document.getElementById("weight").value);
+
+            let height = Number(document.getElementById("height").value);
+
+
+            if (weight <= 0 || height <= 0) {
+
+                document.getElementById("result").innerHTML =
+                    `<p class="text-red-500 font-semibold">
+                        Please enter valid weight and height
+                    </p>`;
+
+                return;
+            }
+
+
+            // Convert cm to meter
+
+            let heightMeter = height / 100;
+
+
+            // BMI formula
+
+            let bmi = weight / (heightMeter * heightMeter);
+
+            bmi = bmi.toFixed(1);
+
+
+            let comment;
+
+
+            if (bmi < 18.5) {
+
+                comment = "You are Underweight";
+
+            }
+
+            else if (bmi < 25) {
+
+                comment = "Your BMI is Normal";
+
+            }
+
+            else if (bmi < 30) {
+
+                comment = "You are Overweight";
+
+            }
+
+            else if(bmi >=30) {
+
+                comment = "You are Obese";
+
+            }
+            else{
+                conment ="Enter A Valid Data"
+            }
+
+
+            // Display result
+
+            document.getElementById("result").innerHTML = `
+
+                <p class="text-3xl font-bold text-[#3b1028]">
+                    BMI: ${bmi}
+                </p>
+
+                <p class="mt-2 text-lg font-semibold">
+                    ${comment}
+                </p>
+
+            `;
+
+
+            // Move indicator
+
+            let position = ((bmi - 10) / 30) * 100;
+
+
+            if (position < 0) {
+                position = 0;
+            }
+
+            if (position > 100) {
+                position = 100;
+            }
+
+
+            document.getElementById("indicator").style.left =
+                position + "%";
+
+        }
+
+        
+        function goback(){
+            alert("Going Back To Home Page")
+           history.back()
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -9,20 +9,20 @@
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-          <link rel="icon" href="./logo.png">
+          <link rel="icon" href="../assets/logo.png">
 </head>
 
-<body class="min-h-screen bg-[#111827] flex items-center justify-center px-5">
+<body class="min-h-screen bg-[#111827] flex items-center justify-center">
 
     <div class="w-full max-w-md">
 
         <!-- Logo -->
         <div class="text-center mb-8">
 
-            <div class="mx-auto w-14 h-14 rounded-2xl 
+            <div class="mx-auto w-14 h-14 rounded-2xl pb-1
                         bg-gradient-to-tr from-purple-600 to-pink-500
                         flex items-center justify-center
-                        text-white text-2xl font-bold shadow-lg pb-2">
+                        text-white text-2xl font-bold shadow-lg">
                 &lt;/&gt;
             </div>
 
@@ -37,60 +37,55 @@
         </div>
 
 
-        <!-- Login Card -->
-        <div class="bg-[#172033] border border-gray-700/70
+        <!-- Card -->
+        <div class="bg-[#172033] border border-gray-700
                     rounded-2xl p-7 shadow-2xl">
 
-            <div class="text-center mb-7">
+            <div class="text-center mb-6">
 
-                <h2 class="text-2xl font-bold
-                           bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400
-                           bg-clip-text text-transparent">
-                    Welcome Back
+                <h2 class="text-2xl font-bold text-white">
+                    Create Account
                 </h2>
 
-                <p class="text-gray-400 text-sm mt-2">
-                    Login to explore your CodeCraft tools
+                <p class="text-sm text-gray-400 mt-2">
+                    Create your CodeCraft account
                 </p>
 
             </div>
 
 
-            <!-- UserName -->
+            <!-- Username -->
             <div class="mb-5">
 
-                <label class="block text-sm font-medium text-gray-300 mb-2">
+                <label class="block text-sm text-gray-300 mb-2">
                     User Name
                 </label>
 
                 <div class="relative">
 
-                    <i class="fa-solid fa-envelope absolute left-4 top-1/2
+                    <i class="fa-solid fa-user absolute left-4 top-1/2
                               -translate-y-1/2 text-gray-500"></i>
 
                     <input
-                        id="Uname"
+                    id="Uname"
                         type="text"
-                        placeholder="Enter your username"
+                        placeholder="Enter username"
                         class="w-full bg-[#111827]
                                border border-gray-700
                                rounded-xl py-3 pl-11 pr-4
                                text-white placeholder-gray-500
                                outline-none
                                focus:border-purple-500
-                               focus:ring-2 focus:ring-purple-500/20
-                               transition duration-300"
-                    >
-
+                               focus:ring-2 focus:ring-purple-500/20">
                 </div>
 
             </div>
 
 
             <!-- Password -->
-            <div class="mb-4">
+            <div class="mb-6">
 
-                <label class="block text-sm font-medium text-gray-300 mb-2">
+                <label class="block text-sm text-gray-300 mb-2">
                     Password
                 </label>
 
@@ -102,90 +97,70 @@
                     <input
                         id="Upass"
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Create password"
                         class="w-full bg-[#111827]
                                border border-gray-700
                                rounded-xl py-3 pl-11 pr-4
                                text-white placeholder-gray-500
                                outline-none
                                focus:border-purple-500
-                               focus:ring-2 focus:ring-purple-500/20
-                               transition duration-300"
-                    >
-
+                               focus:ring-2 focus:ring-purple-500/20">
                 </div>
 
             </div>
 
 
-          
-
-            <!-- Login Button -->
-            <button
-                onclick="Logind()"
-                class="w-full py-3 rounded-xl mt-4
+            <!-- Button -->
+            <button onclick="CreateAcc()"
+                class="w-full py-3 rounded-xl mt-5
                        bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500
                        text-white font-semibold
-                       shadow-lg
-                       hover:shadow-purple-500/30
                        hover:-translate-y-0.5
                        transition duration-300
                        cursor-pointer">
 
-                <i class="fa-solid fa-right-to-bracket mr-2"></i>
-                Login
+                <i class="fa-solid fa-user-plus mr-2"></i>
+                Create Account
 
             </button>
 
 
-            <!-- Register -->
+            <!-- Login -->
             <p class="text-center text-sm text-gray-400 mt-6">
 
-                Don't have an account?
+                Already have an account?
 
-                <a href="./CreateAccount.html"
-                   class="text-purple-400 font-semibold
-                          hover:text-pink-400 transition">
-                    Create Account
+                <a onclick="backtologin()"
+                   class="text-purple-400 font-semibold hover:text-pink-400 hover:cursor-pointer">
+                    Login
                 </a>
 
             </p>
 
         </div>
 
-
-        <!-- Footer -->
-        <p class="text-center text-xs text-gray-600 mt-6">
-            © 2026 CodeCraft. All rights reserved.
-        </p>
-
     </div>
 
     <script>
-        function Logind(){
+        function CreateAcc(){
             const uname=Uname.value;
             const upass=Upass.value;
-             
             if(uname in localStorage){
-                const data=JSON.parse(localStorage.getItem(uname))
-                
-                if(upass===data){
-                    window.location.replace("../index.html")
-                    localStorage.setItem("UserName",JSON.stringify(uname))
-                    console.log(uname)
-                    alert(`Logged in Successfully!`)
-                }
-                 else{
-                alert(`Invalid  Password`)
-            }
+                alert(`User Name ${uname} Already Exist`)
             }
             else{
-                alert(`Invalid User Name or Password`)
+                localStorage.setItem(uname,JSON.stringify(upass));
+                alert(`Account Created Successfully`);
+                window.location.replace("../index.html");
+              
             }
             Uname.value=""
             Upass.value=""
         }
-    </script>
 
+        function backtologin(){
+            window.location.replace("../index.html");
+        }
+    </script>
 </body>
 </html>

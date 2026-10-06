@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Car Log • Add • Manage • Display | CodeCraft</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="icon" href="../assets/logo.png">
+
+</head>
+<body class="bg-[#f8f1f5]">
+
+                <header class="bg-[#5a1a3c] text-white shadow-xl">
+                <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-[#f5e6eb] text-[#5a1a3c] flex items-center justify-center text-2xl">
+                            🚘
+                        </div>
+
+                        <div>
+                            <h1 class="text-2xl font-bold">Car World</h1>
+                            <p class="text-sm text-[#f5e6eb]">Manage Your Cars Easily</p>
+                        </div>
+                    </div>
+
+                <div class="flex items-center gap-4 text-sm text-[#f5e6eb]">
+
+                    <span>🚗 Your Car Collection</span>
+
+                    <a onclick="goback()"
+                    class="bg-[#f5e6eb] text-[#5a1a3c] px-4 py-2 rounded-lg
+                            hover:bg-white transition duration-300 font-semibold hover:cursor-pointer">
+                        🏠 Home
+                    </a>
+
+                </div>
+
+                </div>
+            </header>
+
+    <div class="max-w-7xl mx-auto p-5">
+
+       
+        <div class="grid md:grid-cols-3 gap-8 m-8">
+
+            <div class=" bg-white shadow-xl hover:shadow-2xl p-5 rounded-xl transition duration-300">
+
+                  <h3 class="text-xl font-bold text-[#8f4565] text-center">Enter Car Details</h3>
+                <label for="" class=" block font-semibold mb-2 m-1">Car Brand</label>
+                <input id="cbrand" type="text" placeholder="Enter the Brand" class="w-full border  border-gray-300 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-[#a65370]">
+                <label for="" class=" block font-semibold mb-2 m-1">Car Price</label>
+                <input id="cprice" type="text" placeholder="Enter the Price" class="w-full border  border-gray-300 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-[#a65370]">
+                <label for="" class=" block font-semibold mb-2 m-1">Key</label>
+                <input id="ckey" type="text" placeholder="Enter the Key" class="w-full border  border-gray-300 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-[#a65370]">
+
+              <div class="text-center m-8">
+
+                  <button onclick="addDetails()" class="text-white bg-[#5a1a3c] rounded-xl p-2 hover:bg-[#a65370] transition-all duration-400 hover:shadow-xl ">Add Details</button>
+              </div>
+            </div>
+            <div class=" bg-white shadow-xl hover:shadow-2xl transition duration-300 p-5 rounded-xl">
+
+               <h3 class="text-xl font-bold text-[#8f4565] text-center">View Car Details</h3>
+                <label for="" class=" block font-semibold mb-2 m-1">Key</label>
+                <input id="fetchs" type="text" placeholder="Enter the Key" class="w-full border  border-gray-300 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-[#a65370]">
+
+                <div id="dis" class="bg-[#f5e6eb] rounded-xl p-5 my-5 shadow-xl">
+
+                     <p class="text-gray-400">Details will be displayed here</p>
+                   
+                </div>
+                    <div class="text-center m-8">
+
+                        <button onclick="display()" class="text-white bg-[#5a1a3c] rounded-xl p-2 hover:bg-[#a65370] transition-all duration-400 hover:shadow-xl ">Fetch Details</button>
+
+                    </div>
+            </div>
+            <div class=" bg-white shadow-xl hover:shadow-2xl p-5 rounded-xl transition duration-300">
+               <h3 class="text-xl font-bold text-[#8f4565] text-center">Delete Car Details</h3>
+                <label for="" class=" block font-semibold mb-2 m-1">Key</label>
+                <input id="erase" type="text" placeholder="Enter the Key" class="w-full border  border-gray-300 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-[#a65370]">
+
+               
+                    <div class="text-center m-8">
+                        <button onclick="removeDetails()" class="text-white bg-[#5a1a3c] rounded-xl p-2 hover:bg-[#a65370] transition-all duration-400 hover:shadow-xl ">Remove Details</button>
+                    </div>
+            </div>
+        </div>
+        
+            <button onclick="clearAll()" class=" text-2xl text-white bg-[#5a1a3c] rounded-xl p-5 hover:bg-[#a65370] transition-all duration-400 hover:shadow-xl w-full my-5">Clear All Details</button>
+        
+    </div>
+
+    <script>
+        function addDetails(){
+            const cardetails={
+             brand:cbrand.value,
+             price:cprice.value,
+             key:ckey.value
+            }
+            if(cardetails.key in localStorage){
+                alert(` Car Details Already Exist`);
+            }
+            else{
+                alert(`Car Details for ${cardetails.key} is Entered Successfully`);
+                localStorage.setItem(cardetails.key,JSON.stringify(cardetails));
+            }
+            cbrand.value=''
+            cprice.value=''
+            ckey.value=''
+        }
+
+        // Clear All from localStorage
+
+            function clearAll(){
+                let result = confirm("Are you sure you want to clear all data?");
+
+                if(result){
+                    localStorage.clear();
+                    alert("All Data Cleared");
+                }
+                else{
+                    alert("Data was not cleared");
+                }
+            }
+
+        // Remove the Car Details
+
+        function removeDetails(){
+            const key=erase.value
+            if(key in localStorage){
+                localStorage.removeItem(key);
+                alert(`Item Key = ${key} removed Successfully`);
+                
+            }
+            else if( key==''){
+                alert(`Enter a valid key`);
+            }
+            else{
+                alert(` Error !!! Item Key = ${key} Not Exist`);
+            }
+             erase.value=''
+        }
+
+
+        // display car details
+
+          function display(){
+            const key=fetchs.value;
+            console.log(key)
+            if(key in localStorage){
+                alert(`Fetching ${key} Details`);
+
+                let data=JSON.parse(localStorage.getItem(key))
+
+                dis.innerHTML=`<div class="relative">
+                            <button onclick="closeDetails()" 
+                            class="absolute top-3 right-2 text-xl font-bold text-[#5a1a3c] hover:text-[#a65370]">
+                                ✕
+                            </button>
+                      <h1 class="text-xl font-bold text-center p-3 text-[#5a1a3c] ">Car Details</h1>
+                        <div class="flex justify-between p-2">
+                        <h1 class="text-md font-bold underline underline-offset-4">Car Brand</h1>
+                        <h1 class="text-md font-bold underline underline-offset-4">Car Price</h1>
+                    </div>
+                    <div class="flex justify-between border-b p-2">
+                        <h1 class="text-md font-bold">${data.brand}</h1>
+                        <h1 class="text-md font-bold">${data.price}</h1>
+                    </div>
+                   </div>`;
+
+                
+            }
+            else{
+                alert(`Invalid Key!!`)
+            }
+            fetchs.value='';
+          }
+
+          function closeDetails(){
+            dis.innerHTML=`<p class="text-gray-400">Details will be displayed here</p>`;
+          }
+
+          
+        function goback(){
+             alert("Going Back To Home Page")
+           history.back()
+        }
+
+
+    </script>
+</body>
+</html>

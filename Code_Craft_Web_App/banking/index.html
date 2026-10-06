@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyBank • Secure • Manage • Transact | CodeCraft</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="../assets/logo.png">
+
+   
+</head>
+
+<body class="bg-[#F8F5EE] min-h-screen text-[#1C2833]">
+
+    <!-- Navbar -->
+    <nav class="bg-[#0B1F33] text-white px-6 py-4 shadow-lg">
+
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+
+            <!-- Logo -->
+            <h1 class="text-2xl font-bold text-[#C9A227]">
+                MyBank
+            </h1>
+
+            <!-- Navigation -->
+            <div class="hidden md:flex gap-8 items-center">
+
+                <a href="#home" class="hover:text-[#C9A227] transition">
+                    Home
+                </a>
+
+                <a href="#tra" class="hover:text-[#C9A227] transition">
+                    Transactions
+                </a>
+
+                <a href="#bal" class="hover:text-[#C9A227] transition">
+                    Balance
+                </a>
+
+                <a onclick="logout()" href="#" class="hover:text-[#C9A227] transition">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main id="home" class="max-w-6xl mx-auto px-6 py-10 scroll-mt-4">
+
+        <!-- Welcome -->
+        <div class="mb-8">
+
+            <p class="text-sm text-[#C9A227] font-semibold uppercase tracking-widest">
+                Personal Banking
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-[#0B1F33] mt-2">
+                Welcome Back
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+                Manage your account and transactions easily.
+            </p>
+
+        </div>
+
+
+        <!-- Balance Card -->
+        <div id="tra" class="bg-[#0B1F33] rounded-2xl p-7 md:p-8 shadow-xl mb-8 scroll-mt-4">
+
+            <div class="flex justify-between items-start">
+
+                <div>
+
+                    <p class="text-gray-300 text-sm uppercase">
+                       Transactions
+                    </p>
+                    <div id="display">
+                        
+                    <h1 id="balance"
+                        class="text-4xl md:text-5xl font-bold text-[#C9A227] mt-3">
+                        ₹******
+                    </h1>
+
+                    <p class="text-gray-400 text-sm mt-3">
+                        Current Transaction
+                    </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card Icon -->
+                <div class="hidden sm:flex w-12 h-12 rounded-full
+                            bg-[#163A5F] items-center justify-center
+                            text-[#C9A227] text-xl">
+                    ₹
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Transactions -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+
+            <!-- Deposit -->
+            <div class="bg-white rounded-2xl p-6 shadow-md
+                        border border-[#E7E3DA]
+                        hover:shadow-xl transition">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div class="w-12 h-12 rounded-xl
+                                bg-[#EEF4F8] flex items-center
+                                justify-center text-[#163A5F] text-xl">
+                        ↓
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-xl font-bold text-[#0B1F33]">
+                            Deposit Money
+                        </h2>
+
+                        <p class="text-sm text-gray-500">
+                            Add money to your account
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="block text-sm font-medium mb-2">
+                    Key
+                </label>
+                <input type="text" id="dkey" placeholder="Enter name & key"
+                    class="w-full border border-[#D8D4CB]
+                           rounded-lg p-3
+                           outline-none
+                           focus:ring-2
+                           focus:ring-[#C9A227]
+                           focus:border-[#C9A227]">
+                    
+                <label class="block text-sm font-medium mb-2">
+                    Amount
+                </label>
+
+                <input
+                    id="depoamnt"
+                    type="text"
+                    placeholder="Enter amount"
+                    class="w-full border border-[#D8D4CB]
+                           rounded-lg p-3
+                           outline-none
+                           focus:ring-2
+                           focus:ring-[#C9A227]
+                           focus:border-[#C9A227]"
+                >
+
+                <button
+                    onclick="deposit()"
+                    class="w-full mt-4
+                           bg-[#163A5F]
+                           text-white
+                           py-3
+                           rounded-lg
+                           font-semibold
+                           hover:bg-[#0B1F33]
+                           transition">
+
+                    Deposit
+
+                </button>
+
+            </div>
+
+
+            <!-- Withdraw -->
+            <div class="bg-white rounded-2xl p-6 shadow-md
+                        border border-[#E7E3DA]
+                        hover:shadow-xl transition">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div class="w-12 h-12 rounded-xl
+                                bg-[#F4F0E5]
+                                flex items-center
+                                justify-center
+                                text-[#C9A227]
+                                text-xl">
+                        ↑
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-xl font-bold text-[#0B1F33]">
+                            Withdraw Money
+                        </h2>
+
+                        <p class="text-sm text-gray-500">
+                            Withdraw money from your account
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <label class="block text-sm font-medium mb-2">
+                    Key
+                </label>
+                <input type="text" id="wkey" placeholder="Enter name & key"
+                    class="w-full border border-[#D8D4CB]
+                           rounded-lg p-3
+                           outline-none
+                           focus:ring-2
+                           focus:ring-[#C9A227]
+                           focus:border-[#C9A227]">
+
+
+                <label class="block text-sm font-medium mb-2">
+                    Amount
+                </label>
+
+                <input
+                    id="wdwamnt"
+                    type="text"
+                    placeholder="Enter amount"
+                    class="w-full border border-[#D8D4CB]
+                           rounded-lg p-3
+                           outline-none
+                           focus:ring-2
+                           focus:ring-[#C9A227]
+                           focus:border-[#C9A227]"
+                >
+
+                <button
+                    onclick="withdraw()"
+                    class="w-full mt-4
+                           bg-[#163A5F]
+                           text-white
+                           py-3
+                           rounded-lg
+                           font-semibold
+                           hover:bg-[#0B1F33]
+                           transition">
+
+                    Withdraw
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        
+<!-- Check Balance -->
+        <div id="bal" class="bg-[#F8F5EE] rounded-3xl shadow-lg
+                    border border-[#E7E3DA]
+                    mt-8 p-6 md:p-10 scroll-mt-14 ">
+
+            <div class="max-w-2xl mx-auto text-center">
+
+                <!-- Icon -->
+                <div class="mx-auto w-16 h-16 rounded-2xl
+                            bg-[#0B1F33]
+                            flex items-center justify-center
+                            text-[#C9A227] text-2xl shadow-md">
+                    ₹
+                </div>
+
+                <!-- Heading -->
+                <p class="text-[#C9A227] text-xs
+                        uppercase tracking-[0.25em]
+                        font-bold mt-5">
+                    Account Overview
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-bold
+                        text-[#0B1F33] mt-2">
+                    Check Your Balance
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+                    Enter your account key to securely view your balance.
+                </p>
+
+                <!-- Key Input -->
+                <div class="max-w-sm mx-auto text-left mt-7">
+
+                    <label for="bkey"
+                        class="block text-sm font-semibold
+                                text-[#0B1F33] mb-2">
+                        Account Key
+                    </label>
+
+                    <div class="relative">
+
+                        <span class="absolute left-5 top-3
+                                    
+                                    text-[#C9A227] font-bold">
+                            #
+                        </span>
+
+                        <input
+                            id="bkey"
+                            type="text"
+                            placeholder="Enter your key"
+                            class="w-full
+                                bg-white
+                                border border-[#D8D4CB]
+                                rounded-xl
+                                pl-10 pr-4 py-3
+                                text-[#0B1F33]
+                                outline-none
+                                transition
+                                focus:ring-2
+                                focus:ring-[#C9A227]
+                                focus:border-[#C9A227]
+                                placeholder:text-gray-400"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- Button -->
+                <button
+                    onclick="balance()"
+                    class="mt-6
+                        bg-[#0B1F33]
+                        text-[#C9A227]
+                        px-8 py-3
+                        rounded-xl
+                        font-semibold
+                        shadow-md
+                        hover:bg-[#163A5F]
+                        hover:shadow-lg
+                        transition-all duration-300">
+
+                    Check Balance
+                </button>
+
+                <!-- Balance Result -->
+                <div id="bala"
+                    class="mt-7
+                            bg-white
+                            border border-[#E7E3DA]
+                            rounded-2xl
+                            p-5
+                            shadow-sm">
+
+                    <p class="text-xs uppercase
+                            tracking-widest
+                            text-gray-400">
+                        Available Balance
+                    </p>
+
+                    <h3 class="text-3xl font-bold
+                            text-[#0B1F33] mt-2">
+                        ₹******
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1F33] text-gray-400 text-center py-5 mt-10">
+
+        <p class="text-sm">
+            © 2026 MyBank. Secure Personal Banking.
+        </p>
+
+    </footer>
+
+    <script>
+        function deposit(){
+            let amounts=Number(depoamnt.value);
+            const key=dkey.value; 
+
+            if(amounts>0 && !(key in localStorage) && key!==''){
+                localStorage.setItem(key,JSON.stringify(amounts))
+                alert(`Amount Deposited Successfully`)
+
+                display.innerHTML=`<h1 id="balance"
+                        class="text-4xl md:text-5xl font-bold text-[#C9A227] mt-3">
+                        ₹${amounts}
+                    </h1>
+
+                    <p class="text-gray-400 text-sm mt-3">
+                        New Account ${key} Created And Amount Credited Successfully
+                    </p>`
+
+            }else if(amounts>0 && key in localStorage){
+
+                 const damount=Number(JSON.parse(localStorage.getItem(key)));
+                
+                 let amount=damount+amounts;
+                 localStorage.setItem(key,JSON.stringify(amount))
+
+                  alert(`Amount ${amounts} Credited Successfully`);
+
+                   display.innerHTML=`<h1 id="balance"
+                        class="text-4xl md:text-5xl font-bold text-[#C9A227] mt-3">
+                        ₹${amounts}
+                    </h1>
+
+                    <p class="text-gray-400 text-sm mt-3">
+                         Amount Credited to Account ${key} Successfully
+                    </p>`
+            }
+            else{
+                alert(`Invalid Key Or Amount`)
+            }
+            depoamnt.value=""
+            dkey.value=""
+        }
+
+        function balance(){
+            const key=bkey.value;
+            if(key in localStorage){
+                const amount=Number(JSON.parse(localStorage.getItem(key)))
+                console.log(amount)
+                bala.innerHTML=`<p class="text-xs uppercase
+                            tracking-widest
+                            text-gray-400">
+                        Available Balance
+                    </p>
+
+                    <h3 class="text-3xl font-bold
+                            text-[#0B1F33] mt-2">
+                        ₹${amount}
+                    </h3>`
+
+            }
+            else{
+                alert(`Invalid Key ${key}`)
+                 bala.innerHTML=`<p class="text-xs uppercase
+                            tracking-widest
+                            text-gray-400">
+                        Available Balance
+                    </p>
+
+                    <h3 class="text-3xl font-bold
+                            text-[#0B1F33] mt-2">
+                        ₹******
+                    </h3>`
+            }
+            bkey.value=''
+        }
+        function withdraw(){
+            const key=wkey.value;
+            let amounts=Number(wdwamnt.value);
+            
+            if(amounts>0&& key in localStorage){
+                let damount=Number(JSON.parse(localStorage.getItem(key)))
+                 amount=damount-amounts;
+               if(amounts<=amount){
+                 localStorage.setItem(key,JSON.stringify(amount));
+                alert(`Amount ${amounts} Has Been Debited Successfully`)
+
+                 display.innerHTML=`<h1 id="balance"
+                        class="text-4xl md:text-5xl font-bold text-[#C9A227] mt-3">
+                        ₹${amounts}
+                    </h1>
+
+                    <p class="text-gray-400 text-sm mt-3">
+                       Amount Debited form Account ${key} Successfully
+                    </p>`
+               }
+               else{
+                alert(`Has No Sufficient Balance ${damount}`)
+               }
+            }
+            else{
+                alert(`Invalid Amount or Key`)
+            }
+            wkey.value=''
+            wdwamnt.value=''
+        }
+
+        function logout(){
+             if(confirm(`Do you Want to Clear Data And return to HOME!!`)){
+                  const key=prompt(`Enter the Key to Remove Data`);
+                  if(key in localStorage){
+                    localStorage.removeItem(key);
+                  alert(`Data for Key ${key} Removed Successfully`)
+                  window.location.replace("../landingui/index.html");
+                  }
+                  else{
+                    alert(`Invalid key`)
+                  }
+            }
+            else{
+                alert(`Data Has Not Been Removed`);
+                window.location.replace("../landingui/index.html");
+            }
+          
+           
+        }
+    </script>
+
+</body>
+</html>
+

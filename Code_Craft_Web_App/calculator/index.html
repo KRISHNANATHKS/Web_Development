@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate • Solve • Simplify | CodeCraft</title>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="icon" href="../assets/logo.png">
+
+
+</head>
+
+<body class="bg-[#8f4565] min-h-screen flex justify-center items-center">
+
+   <div>
+     <a onclick="goback()"
+   class="fixed top-5 left-5 bg-[#3b1028] text-white px-5 py-2 rounded-lg
+          hover:bg-[#6f2d4f] transition duration-300 shadow-lg hover:cursor-pointer">
+    <i class="fa-solid fa-house mr-2"></i>
+    Home
+   </a>
+   </div>
+
+
+<div>
+        <h1 class="text-white text-4xl font-semibold text-center mb-8">
+        Calculator
+        </h1>
+
+<div class="bg-[#3b1028] p-6 rounded-2xl  shadow-[0_0_40px_white]  shadow-2xl
+            hover:scale-105 transition duration-300">
+
+    
+
+    <input id="display"
+        type="text"
+        class="w-full h-14 bg-white rounded-lg mb-4 text-right text-2xl p-3"
+        readonly
+    >
+
+    <div class="grid grid-cols-4 gap-3">
+
+        <button onclick="clearDisplay()"
+            class="col-span-2 bg-[#8b3048] text-white p-4  rounded-lg hover:bg-red-600">
+            C
+        </button>
+
+        <button onclick="addValue('/')"
+            class="bg-[#B87598] text-white p-4 rounded-lg hover:bg-[#bd6682]">
+            /
+        </button>
+
+        <button onclick="addValue('*')"
+            class="bg-[#B87598] text-white p-4 rounded-lg hover:bg-[#bd6682]">
+            ×
+        </button>
+
+        <button onclick="addValue('7')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            7
+        </button>
+
+        <button onclick="addValue('8')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            8
+        </button>
+
+        <button onclick="addValue('9')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400"">
+            9
+        </button>
+
+        <button onclick="addValue('-')"
+            class="bg-[#B87598] text-white p-4 rounded-lg hover:bg-[#bd6682]">
+            -
+        </button>
+
+        <button onclick="addValue('4')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            4
+        </button>
+
+        <button onclick="addValue('5')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            5
+        </button>
+
+        <button onclick="addValue('6')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            6
+        </button>
+
+        <button onclick="addValue('+')"
+            class="bg-[#aF6F8F] text-white p-4 rounded-lg hover:bg-[#bd6682]">
+            +
+        </button>
+
+        <button onclick="addValue('1')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            1
+        </button>
+
+        <button onclick="addValue('2')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            2
+        </button>
+
+        <button onclick="addValue('3')"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            3
+        </button>
+
+        <button onclick="calculate()"
+            class="row-span-2 bg-[#d98ba5] text-white p-4 rounded-lg hover:bg-[#e5a3b9]">
+            =
+        </button>
+
+        <button onclick="addValue('0')"
+            class=" bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            0
+        </button>
+        <button onclick="addValue('.')"
+            class=" bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-400">
+            .
+        </button>
+
+        <button onclick="removeLastItem()"
+            class="bg-[#6f2d4f] text-white p-4 rounded-lg hover:bg-pink-200">
+            ⌫
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+
+    function addValue(value) {
+        document.getElementById("display").value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById("display").value = "";
+    }
+
+    function calculate() {
+        let result = document.getElementById("display").value;
+        document.getElementById("display").value = eval(result);
+    }
+
+    function removeLastItem() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+    }
+
+        function goback(){
+             alert("Going Back To Home Page")
+            history.back();
+        }
+
+</script>
+
+
+</body>
+</html>
