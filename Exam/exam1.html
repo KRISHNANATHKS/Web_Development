@@ -64,15 +64,16 @@
             
             
         }
+            function updated(btn){
+                    const card = btn.parentElement.parentElement;
 
-             function updated(btn){
-                    const data=btn.parentElement.parentElement.querySelector("h1").innerText;
-                    const adata=btn.parentElement.parentElement.querySelector("h2").innerText;
-                    const cdata=btn.parentElement.parentElement.querySelector("h3").innerText;
+                    const data = card.querySelector("h1").innerText;
+                    const adata = card.querySelector("h2").innerText;
+                    const cdata = card.querySelector("h3").innerText;
 
-                    const nname= prompt(`update Book name`,data)
-                    const naut= prompt(`update Author`,adata)
-                    const nca= prompt(`update Category`,cdata)
+                    const nname = prompt(`update Book name`, data);
+                    const naut = prompt(`update Author`, adata);
+                    const nca = prompt(`update Category`, cdata);
 
                     localStorage.removeItem(data);
 
@@ -80,17 +81,13 @@
                         BookName: nname,
                         Author: naut,
                         Category: nca
-                    }
+                    };
 
+                
                     localStorage.setItem(nname, JSON.stringify(newdata));
-
-                    btn.parentElement.parentElement.innerHTML=`<div class="p-4 space-y-4 bg-gray-800 rounded-xl border border-gray-700 text-white">
-                        <h1> ${nname}</h1>
-                        <h2>${naut}</h2>
-                        <h3>${nca}</h3>
-                        <button onclick="updated(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Update</button>
-                        <button onclick="deleted(this)" class="p-2 m-2 bg-pink-600 rounded-xl">Delete</button>
-                    </div>`
+                    card.querySelector("h1").innerText = nname;
+                    card.querySelector("h2").innerText = naut;
+                    card.querySelector("h3").innerText = nca;
                 }
     </script>
 </body>
